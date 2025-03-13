@@ -174,15 +174,15 @@
 
   const config = {
     basePrice: 99,
-    topPagePrice: 198,
+    homePagePrice: 198,
     baseSpeed: 1,
     homePageSpeed: 2,
     testSpeed: 1,
     responsiveMultipliers: {
-      desktop_only: { cost: 0.75, name: 'Desktop Only' },
-      mobile_only: { cost: 0.75, name: 'Mobile Only' },
+      desktop_only: { cost: 0.5, name: 'Desktop Only' },
+      mobile_only: { cost: 0.5, name: 'Mobile Only' },
       responsive: { cost: 1.0, name: 'Responsive' },
-      responsive_liquid: { cost: 1.2, name: 'Responsive Liquid' }
+      responsive_liquid: { cost: 1.25, name: 'Responsive Liquid' }
     },
     complexityMultipliers: {
       basic: { cost: 0.5, name: 'Basic' },
@@ -211,7 +211,7 @@
     const complexityFactor = config.complexityMultipliers[complexityLevel].cost;
     const speedFactors = config.speedMultipliers[deliverySpeed];
 
-    const estimatedHomePageCost = config.topPagePrice * responsiveFactor * complexityFactor * speedFactors.cost;
+    const estimatedHomePageCost = config.homePagePrice * responsiveFactor * complexityFactor * speedFactors.cost;
     let estimatedInnerPageCost = 0;
     if (validatedPageCount > 1) {
       estimatedInnerPageCost = config.basePrice * (validatedPageCount - 1) * responsiveFactor * complexityFactor * speedFactors.cost;
