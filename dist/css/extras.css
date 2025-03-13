@@ -397,7 +397,6 @@ header .header-nav li.is-current a {
 header .header-nav a {
   color: #666;
   text-decoration: none;
-  text-transform: uppercase;
 }
 header.is-transparent {
   background: transparent;
@@ -451,6 +450,9 @@ header.is-transparent .header-nav a:not(:hover) {
   }
   header .header-nav li:not(:first-child) {
     margin-left: 32px;
+  }
+  header .header-nav a:hover {
+    color: #ffb400;
   }
   header .header-buttons .btn {
     height: 50px;
