@@ -1,0 +1,49 @@
+{
+  "name": "hc_gulp",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp develop",
+    "watch": "gulp watch",
+    "imagemin": "gulp imagemin",
+    "lint": "gulp lint",
+    "lint:pug": "gulp lintPugAndBuild",
+    "lint:sass": "gulp lintSassAndBuild",
+    "lint:js": "gulp lintJsAndBuild"
+  },
+  "keywords": [],
+  "author": "Tuan Thanh Ngo",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.3",
+    "del": "^8.0.0",
+    "eslint": "^9.22.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-jquery": "^1.5.1",
+    "gulp": "^5.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^5.0.2",
+    "gulp-eslint-new": "^2.4.0",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-prettier": "^6.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-pug-linter": "^1.5.0",
+    "gulp-sass": "^6.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "postcss-reporter": "^7.1.0",
+    "postcss-scss": "^4.0.9",
+    "pug-lint": "^2.7.0",
+    "sass": "^1.85.1",
+    "stylelint": "^16.15.0",
+    "stylelint-config-property-sort-order-smacss": "^10.0.0",
+    "stylelint-config-standard-scss": "^14.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "nodemailer": "^6.10.0"
+  }
+}

@@ -1,0 +1,185 @@
+@charset "utf-8";
+@use "../_base/base" as *;
+
+select {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-image: url("../img/common/icon_arrow_down_l.svg");
+  background-repeat: no-repeat;
+  color: #fff;
+
+  option {
+    color: #222;
+  }
+}
+
+@include desktop {
+  select {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-position: right 20px top 50%;
+    background-size: 20px auto;
+    font-size: 20px;
+  }
+}
+
+@include mobile {
+  select {
+    padding: 0.1rem 0.4rem 0.1rem 0.2rem;
+    border-radius: 0.05rem;
+    background-position: right 0.2rem top 50%;
+    background-size: 0.15rem auto;
+    font-size: 0.14rem;
+  }
+}
+
+// .input-range {
+//   display: block;
+//   width: 100%;
+//   border-bottom: 2px solid orange;
+// }
+
+$range-handle-color: $color-primary !default;
+$range-handle-color-hover: #1abc9c !default;
+$range-handle-size: 20px !default;
+$range-track-color: #d7dcdf;
+
+.range-slider {
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
+
+  .range-slider-range {
+    width: 100%;
+    height: 10px;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    outline: none;
+    background: $range-track-color;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &::-webkit-slider-thumb {
+      width: $range-handle-size;
+      height: $range-handle-size;
+      transition: background 0.15s ease-in-out;
+      border-radius: 50%;
+      background: $range-handle-color;
+      cursor: pointer;
+      appearance: none;
+
+      &:hover {
+        background: $range-handle-color-hover;
+      }
+    }
+
+    &:active::-webkit-slider-thumb {
+      background: $range-handle-color-hover;
+    }
+
+    &::-moz-range-thumb {
+      width: $range-handle-size;
+      height: $range-handle-size;
+      transition: background 0.15s ease-in-out;
+      border: 0;
+      border-radius: 50%;
+      background: $range-handle-color;
+      cursor: pointer;
+
+      &:hover {
+        background: $range-handle-color-hover;
+      }
+    }
+
+    &:active::-moz-range-thumb {
+      background: $range-handle-color-hover;
+    }
+
+    &:focus {
+      &::-webkit-slider-thumb {
+        box-shadow:
+          0 0 0 3px #fff,
+          0 0 0 6px #1abc9c;
+      }
+    }
+  }
+
+  ::-moz-range-track {
+    border: 0;
+    background: $range-track-color;
+  }
+
+  input::-moz-focus-inner,
+  input::-moz-focus-outer {
+    border: 0;
+  }
+
+  .range-slider-value {
+    position: absolute;
+    z-index: 100;
+    top: -50px;
+    left: 0;
+    width: 50px;
+    height: 35px;
+    padding: 8px 5px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background: $color-primary;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: calc(50% - 10px);
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top: 10px solid $color-primary;
+    }
+  }
+}
+
+.input-text,
+.input-textarea,
+.input-file {
+  display: block;
+  width: 100%;
+  background: #fff;
+  color: #222;
+}
+
+@include desktop {
+  .input-text,
+  .input-textarea,
+  .input-file {
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-size: 20px;
+  }
+
+  .input-textarea {
+    height: 260px;
+  }
+}
+
+@include mobile {
+  .input-text,
+  .input-textarea,
+  .input-file {
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.1rem;
+    box-shadow: 0 0.03rem 0.06rem rgba(0, 0, 0, 0.15);
+    font-size: 0.16rem;
+  }
+
+  .input-textarea {
+    height: 2.6rem;
+  }
+}

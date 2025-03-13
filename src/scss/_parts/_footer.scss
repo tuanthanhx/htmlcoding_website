@@ -1,0 +1,55 @@
+@charset "utf-8";
+@use "../_base/base" as *;
+
+footer {
+  background: #191919;
+  color: #fff;
+  text-align: center;
+
+  .copyright {
+    margin: 0;
+    color: #b3abab;
+  }
+
+  .button-top {
+    display: none;
+    position: fixed;
+    z-index: 900;
+    border-radius: 100%;
+    background: $color-primary url("../img/common/icon_arrow_up.svg") 50% 50% / 40% auto no-repeat;
+    cursor: pointer;
+  }
+}
+
+@include desktop {
+  footer {
+    padding: 35px 0;
+    font-size: 20px;
+
+    .button-top {
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+
+      &:hover {
+        transition: opacity ease 0.25s;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@include mobile {
+  footer {
+    padding: 0.3rem 0;
+    font-size: 0.13rem;
+
+    .button-top {
+      right: 0.2rem;
+      bottom: 0.15rem;
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+  }
+}
