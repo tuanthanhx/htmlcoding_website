@@ -156,33 +156,42 @@
       }
     });
   };
-  const showPriceBreakdown = () => {
-    $('.result-link a').on('click', () => {
-      alert('This feature will be completed soon.');
-      return false;
+
+  const handleModal = () => {
+    $('.open-modal').on('click', function (e) {
+      e.preventDefault();
+      const modalId = $(this).attr('data-modal');
+      if ($('.' + modalId).length) {
+        $('.' + modalId).stop().fadeIn();
+      }
+    });
+    $('.modal .modal-close').on('click', function (e) {
+      e.preventDefault();
+      const modal = $(this).closest('.modal');
+      modal.stop().fadeOut();
     });
   };
 
   const config = {
-    basePrice: 100,
-    setupPrice: 100,
+    basePrice: 99,
+    topPagePrice: 198,
     baseSpeed: 1,
-    setupSpeed: 1,
-    testSpeed: 1, responsiveMultipliers: {
-      desktop_only: 0.8,
-      mobile_only: 0.8,
-      responsive: 1.0,
-      responsive_liquid: 1.2
+    homePageSpeed: 2,
+    testSpeed: 1,
+    responsiveMultipliers: {
+      desktop_only: { cost: 0.75, name: 'Desktop Only' },
+      mobile_only: { cost: 0.75, name: 'Mobile Only' },
+      responsive: { cost: 1.0, name: 'Responsive' },
+      responsive_liquid: { cost: 1.2, name: 'Responsive Liquid' }
     },
     complexityMultipliers: {
-      basic: 1.0,
-      intermediate: 1.5,
-      advanced: 2.0
+      basic: { cost: 0.5, name: 'Basic' },
+      intermediate: { cost: 1, name: 'Intermediate' },
+      advanced: { cost: 1.5, name: 'Advanced' }
     },
     speedMultipliers: {
-      standard: { cost: 1.0, time: 1.0 },
-      express: { cost: 1.3, time: 0.7 },
-      super_express: { cost: 1.6, time: 0.5 }
+      standard: { cost: 1.0, time: 1, name: 'Standard' },
+      express: { cost: 2, time: 0.5, name: 'Express' }
     }
   };
 
@@ -191,29 +200,28 @@
     // 1. Collect user input
     const pageCount = parseInt(document.querySelector('input[name="page_count"]').value, 10) || 1;
     const responsiveOption = document.querySelector('select[name="responsive_option"]').value || 'responsive';
-    const complexityLevel = document.querySelector('select[name="complexity_level"]').value || 'basic';
+    const complexityLevel = document.querySelector('select[name="complexity_level"]').value || 'intermediate';
     const deliverySpeed = document.querySelector('select[name="delivery_speed"]').value || 'standard';
 
     // Validate page count
     const validatedPageCount = Math.min(Math.max(pageCount, 1), 100);
 
     // 2. Calculate estimates
-    const responsiveFactor = config.responsiveMultipliers[responsiveOption];
-    const complexityFactor = config.complexityMultipliers[complexityLevel];
+    const responsiveFactor = config.responsiveMultipliers[responsiveOption].cost;
+    const complexityFactor = config.complexityMultipliers[complexityLevel].cost;
     const speedFactors = config.speedMultipliers[deliverySpeed];
 
-    const estimatedCost = config.setupPrice + config.basePrice * validatedPageCount * responsiveFactor * complexityFactor * speedFactors.cost;
+    const estimatedHomePageCost = config.topPagePrice * responsiveFactor * complexityFactor * speedFactors.cost;
+    let estimatedInnerPageCost = 0;
+    if (validatedPageCount > 1) {
+      estimatedInnerPageCost = config.basePrice * (validatedPageCount - 1) * responsiveFactor * complexityFactor * speedFactors.cost;
+    }
+    const estimatedTotalCost = estimatedHomePageCost + estimatedInnerPageCost;
 
-    const estimatedWorkingDay = config.setupSpeed + config.testSpeed + config.baseSpeed * validatedPageCount * speedFactors.time;
+    const estimatedInnerPageSpeed = config.baseSpeed * (validatedPageCount - 1) * speedFactors.time;
+    const estimatedTotalSpeed = config.homePageSpeed + config.testSpeed + estimatedInnerPageSpeed;
 
-    // 3. Update display
-    const costElement = document.querySelector('[data-id="estimated-cost"]');
-    const dayElement = document.querySelector('[data-id="estimated-day"]');
-
-    costElement.textContent = Math.round(estimatedCost).toLocaleString();
-    dayElement.textContent = Math.round(estimatedWorkingDay);
-
-    // 4. Styling
+    // 3. Styling
     const sliderPin = document.querySelector('.range-slider-value');
     const minValue = 1;
     const maxValue = 100;
@@ -223,7 +231,62 @@
     sliderPin.textContent = pageCount;
     sliderPin.style.left = `${percent}%`;
 
-    return { cost: estimatedCost, days: estimatedWorkingDay };
+    // 4. Update Display
+    const costElement = document.querySelector('[data-id="estimated-cost"]');
+    const dayElement = document.querySelector('[data-id="estimated-day"]');
+    costElement.textContent = Math.round(estimatedTotalCost).toLocaleString();
+    dayElement.textContent = Math.round(estimatedTotalSpeed);
+
+    // 5. Update Modal
+
+    const rowCostInnerPage = document.querySelector('table.breakdown-cost tr[data-id="row-inner-page"]');
+    const rowSpeedInnerPage = document.querySelector('table.breakdown-speed tr[data-id="row-inner-page"]');
+
+    const colHomePageCount = document.querySelector('table.breakdown-cost td[data-id="col-home-page-count"]');
+    const colHomePageComplexity = document.querySelector('table.breakdown-cost td[data-id="col-home-page-complexity"]');
+    const colHomePageDelivery = document.querySelector('table.breakdown-cost td[data-id="col-home-page-delivery"]');
+    const colHomePageCost = document.querySelector('table.breakdown-cost td[data-id="col-home-page-cost"]');
+    const colCostTotal = document.querySelector('table.breakdown-cost td[data-id="col-total"]');
+    const colInnerPageCount = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-count"]');
+    const colInnerPageComplexity = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-complexity"]');
+    const colInnerPageDelivery = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-delivery"]');
+    const colInnerPageCost = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-cost"]');
+    const colSpeedTotal = document.querySelector('table.breakdown-speed td[data-id="col-total"]');
+
+    const colHomePageCount2 = document.querySelector('table.breakdown-speed td[data-id="col-home-page-count"]');
+    const colHomePageSpeed = document.querySelector('table.breakdown-speed td[data-id="col-home-page-speed"]');
+    const colInnerPageCount2 = document.querySelector('table.breakdown-speed td[data-id="col-inner-page-count"]');
+    const colInnerPageSpeed = document.querySelector('table.breakdown-speed td[data-id="col-inner-page-speed"]');
+
+    if (validatedPageCount > 1) {
+      rowCostInnerPage.style.display = 'table-row';
+      rowSpeedInnerPage.style.display = 'table-row';
+    } else {
+      rowCostInnerPage.style.display = 'none';
+      rowSpeedInnerPage.style.display = 'none';
+    }
+
+    const homePageCountText = '1 page';
+    const innerPageCountText = `${validatedPageCount - 1} page${validatedPageCount - 1 > 1 ? 's' : ''}`;
+
+    colHomePageCount.textContent = homePageCountText;
+    colHomePageComplexity.textContent = config.responsiveMultipliers[responsiveOption].name;
+    colHomePageDelivery.textContent = config.complexityMultipliers[complexityLevel].name;
+    colHomePageCost.textContent = `$${Math.round(estimatedHomePageCost).toLocaleString()}`;
+    colCostTotal.textContent = `$${Math.round(estimatedTotalCost).toLocaleString()}`;
+    colInnerPageCount.textContent = innerPageCountText;
+    colInnerPageComplexity.textContent = config.responsiveMultipliers[responsiveOption].name;
+    colInnerPageDelivery.textContent = config.complexityMultipliers[complexityLevel].name;
+    colInnerPageCost.textContent = `$${Math.round(estimatedInnerPageCost).toLocaleString()}`;
+    colSpeedTotal.textContent = `${Math.round(estimatedTotalSpeed)} days`;
+
+
+    colHomePageCount2.textContent = homePageCountText;
+    colHomePageSpeed.textContent = `${config.homePageSpeed} day${config.homePageSpeed > 1 ? 's' : ''}`;
+    colInnerPageCount2.textContent = innerPageCountText;
+    colInnerPageSpeed.textContent = `${Math.round(estimatedInnerPageSpeed)} day${Math.round(estimatedInnerPageSpeed) > 1 ? 's' : ''}`;
+
+    return { cost: estimatedTotalCost, days: estimatedTotalSpeed };
   };
 
   const setupEventListeners = () => {
@@ -264,10 +327,10 @@
     toggleFaq();
     toggleNav();
     toggleHeaderFixed();
-    showPriceBreakdown();
   });
 
   window.addEventListener('load', () => {
+    handleModal();
     setupEventListeners();
     calculateEstimate();
     handleFormSubmit();

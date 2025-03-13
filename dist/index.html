@@ -225,8 +225,8 @@
                 <div class="form-label">Complexity Level</div>
                 <div class="form-inputs">
                   <select name="complexity_level">
-                    <option value="basic" selected>Basic</option>
-                    <option value="intermediate">Intermediate</option>
+                    <option value="basic">Basic</option>
+                    <option value="intermediate" selected>Intermediate</option>
                     <option value="advanced">Advanced</option>
                   </select>
                 </div>
@@ -235,7 +235,6 @@
                   <select name="delivery_speed">
                     <option value="standard" selected>Standard</option>
                     <option value="express">Express</option>
-                    <option value="super_express">Super Express</option>
                   </select>
                 </div>
               </div>
@@ -245,10 +244,70 @@
                 <div class="result-label">Estimated Working Time</div>
                 <div class="result-duration"><span data-id="estimated-day">0</span> days</div>
                 <div class="result-button"><a class="btn btn-primary ico-envelope" href="#contact">Contact Us</a></div>
-                <div class="result-link"><a href="#">View Price Breakdown</a></div>
+                <div class="result-link"><a class="open-modal" data-modal="modal-breakdown" href="#">View Price Breakdown</a></div>
               </div>
             </form>
             <p class="note">The price is indicative only.<br class="sm"> For a more detailed discussion of all the services you need, use the contact form</p>
+            <div class="modal modal-breakdown">
+              <div class="modal-overlay"></div>
+              <div class="modal-wrapper"><a class="modal-close" href="#"></a>
+                <h3 class="breakdown-label">Cost Breakdown</h3>
+                <table class="breakdown-table breakdown-cost">
+                  <tr>
+                    <th>Home Page</th>
+                    <td data-id="col-home-page-complexity"></td>
+                    <td data-id="col-home-page-delivery"></td>
+                    <td data-id="col-home-page-count"></td>
+                    <td data-id="col-home-page-cost"></td>
+                  </tr>
+                  <tr data-id="row-inner-page">
+                    <th>Inner Pages</th>
+                    <td data-id="col-inner-page-complexity"></td>
+                    <td data-id="col-inner-page-delivery"></td>
+                    <td data-id="col-inner-page-count"></td>
+                    <td data-id="col-inner-page-cost"></td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td data-id="col-total"></td>
+                  </tr>
+                </table>
+                <h3 class="breakdown-label">Speed Breakdown</h3>
+                <table class="breakdown-table breakdown-speed">
+                  <tr>
+                    <th>Home Page</th>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td data-id="col-home-page-count"></td>
+                    <td data-id="col-home-page-speed"></td>
+                  </tr>
+                  <tr data-id="row-inner-page">
+                    <th>Inner Pages</th>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td data-id="col-inner-page-count"></td>
+                    <td data-id="col-inner-page-speed"></td>
+                  </tr>
+                  <tr>
+                    <th>Testing</th>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td>1 day</td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td class="is-empty">&nbsp;</td>
+                    <td data-id="col-total"></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
         <div class="section-top-stats" id="stats">
