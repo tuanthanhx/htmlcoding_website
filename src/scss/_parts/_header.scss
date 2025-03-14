@@ -75,12 +75,8 @@ header {
     }
 
     .header-nav {
-      li {
-        &:not(.is-current) {
-          a:not(:hover) {
-            color: #fff;
-          }
-        }
+      li:not(.is-current) a:not(:hover) {
+        color: #fff;
       }
     }
   }
