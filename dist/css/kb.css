@@ -1089,6 +1089,10 @@ select option {
 .post i {
   font-style: italic;
 }
+.post strong,
+.post b {
+  font-weight: 700;
+}
 .post a {
   color: #ffb400;
   text-decoration: none;
@@ -1106,6 +1110,7 @@ select option {
   word-break: break-word;
 }
 .post pre[class*=language-] {
+  margin-bottom: 1.5em;
   line-height: 1.6;
 }
 

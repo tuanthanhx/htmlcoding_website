@@ -17,6 +17,11 @@
     font-style: italic;
   }
 
+  strong,
+  b {
+    font-weight: 700;
+  }
+
   a {
     color: $color-primary;
     text-decoration: none;
@@ -39,6 +44,7 @@
   // code[class*="language-"],
 
   pre[class*="language-"] {
+    margin-bottom: 1.5em;
     line-height: 1.6;
   }
 }

@@ -28,28 +28,443 @@ block container
 
       +postMeta('2025-03-14', null, true)
 
-      h2#general General
+      //- h2#general General
 
-      p 🚀🚀🚀
+      //- p 🚀🚀🚀
+
+      h2#general Accessibility
+
+      p Code is expected to conform to the Web Content Accessibility Guidelines (WCAG), version 2.2, at level AA.
+
+      h3 Applying WCAG Conformance Levels
+
+      p WCAG 2.2 consists of 4 layers:
+
+      ul
+        li Principles
+        li Guidance
+        li Success criteria
+        li Sufficient and advisory techniques
+
+      h3 Principles
+
+      p When applying WCAG 2.2, the guidance and success criteria are organized around 4 principles. These principles place emphasis on how people interact with content and must be:
+      ul
+        li <strong>Perceivable</strong> – interacting with the content using the medium that they are familiar with. For example, providing text alternatives for those who are blind.
+        li <strong>Operable</strong> – finding and using content is accessible. For example, being able to use a keyboard or a screen reader.
+        li <strong>Understandable</strong> – content uses clear language and is understandable. For example, use meaningful labels, explain all abbreviations.
+        li <strong>Robust</strong> – content can be interpreted in a range of ways. For example, assistive technologies are able to interpret and parse content.
+
+
+
+
+      h3 Guidance
+      p Each principle is supported by a list of guidelines to ensure that content is more accessible and presentable across the different devices that meet a user’s disability. The guidelines are listed below, the full detail can be found in the WCAG 2.2.
+
+      h4 Principle: Perceivable
+
+      p
+        strong Guideline 1.1 Text Alternatives
+        br
+        | Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.
+      p
+        strong Guideline 1.2 Time-based Media
+        br
+        | Provide alternatives for time-based media. For example, include captions and transcripts for audio or video clips.
+      p
+        strong Guideline 1.3 Adaptable
+        br
+        | Create content that can be presented in different ways (for example simpler layout) without losing information or structure.
+      p
+        strong Guideline 1.4 Distinguishable
+        br
+        | Make it easier for users to see and hear content including separating foreground from background.
+
+      h4 Principle: Operable
+
+      p
+        strong Guideline 2.1 Keyboard Accessible
+        br
+        | Make all functionality available from a keyboard.
+      p
+        strong Guideline 2.2 Enough Time
+        br
+        | Provide users enough time to read and use content.
+      p
+        strong Guideline 2.3 Seizures and Physical Reactions
+        br
+        | Do not design content in a way that is known to cause seizures or physical reactions.
+      p
+        strong Guideline 2.4 Navigable
+        br
+        | Provide ways to help users navigate, find content, and determine where they are.
+      p
+        strong Guideline 2.5 Input Modalities
+        br
+        | Make it easier for users to operate functionality through various inputs beyond keyboard.
+
+      h4 Principle: Understandable
+
+      p
+        strong Guideline 3.1 Readable
+        br
+        | Make text content readable and understandable.
+      p
+        strong Guideline 3.2 Predictable
+        br
+        | Make Web pages appear and operate in predictable ways.
+      p
+        strong Guideline 3.3 Input Assistance
+        br
+        | Help users avoid and correct mistakes.
+
+      h4 Principle: Robust
+
+      p
+        strong Guideline 4.1 Compatible
+        br
+        | Maximize compatibility with current and future user agents, including assistive technologies.
+
+
+      h3 Success criteria
+
+      p
+        | Each guidance has a
+        a(href='https://www.w3.org/WAI/WCAG21/quickref/') specific list requirements that must be met for your content to be accessible
+        | . These tests can be carried out using automated software and or human testers. You can find more information on how to meet the success criteria in
+        |
+        a(href='https://www.w3.org/WAI/WCAG21/Understanding/conformance#levels') Understanding Levels of Conformance
+        | . Whilst these criteria are important, usability testing is still important and should be carried out alongside any accessibility testing.
+
+      h3 Techniques: Sufficient, Advisory, and Failures
+
+      p Techniques (code examples, resources, and tests) for guidance and success criteria that can help in making content more accessible, are divided into three categories:
+
+      ul
+        li Sufficient – required and help meet the success criteria
+        li Advisory – suggestions and go beyond what is required
+        li Failures – cause problems and fail to meet the success criteria
+
+      p
+        | For more information on techniques, visit
+        |
+        a(href='https://www.w3.org/WAI/WCAG21/Understanding/understanding-techniques') Understanding Techniques for WCAG Success Criteria
+        | .
+
 
       h2#pug-html PUG/HTML
 
-      p 🚀🚀🚀
+      h3 Validation
+
+      p
+        | All HTML pages should be verified against
+        |
+        a(href='https://validator.w3.org/') the W3C validator
+        |  to ensure that the markup is well formed. This in and of itself is not directly indicative of good code, but it helps to weed out problems that are able to be tested via automation. It is no substitute for manual code review. (For other validators, see
+        |
+        a(href='https://codex.wordpress.org/Validating_a_Website#HTML_-_Validation') HTML Validation
+        |  in the Codex.)
+
+      h3 Define Charset
+
+      p The W3C always recommend developers to declare the charset or character encoding explicitly. It can be done by using the charset attribute of <code>&lt;meta&gt;</code> tag. Pass <code>utf-8</code> as a value to charset attribute as it is the most commonly used character encoding and provides over a million characters.
+
+      pre
+        code.language-html.
+          &lt;meta charset=&quot;utf-8&quot; /&gt;
+
+      h3 Set the viewport
+
+      p Setting the viewport helps web pages render well on different devices. It is achieved by controlling the width and scale of the page. It is used for ensuring the responsiveness of a particular web page.
+
+      pre
+        code.language-html.
+          &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+
+      h3 Self-closing Elements
+
+      p All tags must be properly closed. For tags that can wrap nodes such as text or other elements, termination is a trivial enough task. For tags that are self-closing, the forward slash should have exactly one space preceding it:
+
+      pre
+        code.language-html.
+          &lt;br /&gt;
+
+      p rather than the compact but incorrect:
+
+      pre
+        code.language-html.
+          &lt;br/&gt;
+
+      p The W3C specifies that a single space should precede the self-closing slash (<a href="https://w3.org/TR/xhtml1/#C_2" target="_blank">source</a>).
+
+      h3 Attributes and Tags
+
+      p All tags and attributes must be written in lowercase. Additionally, attribute values should be lowercase when the purpose of the text therein is only to be interpreted by machines. For instances in which the data needs to be human readable, proper title capitalization should be followed.
+
+      p For machines:
+
+      pre
+        code.language-html.
+          &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+      p For humans:
+
+      pre
+        code.language-html.
+          &lt;a href=&quot;http://example.com/&quot; title=&quot;Description Here&quot;&gt;Example.com&lt;/a&gt;
+
+      h3 Quotes
+
+      p All attributes must have a value, and must use double-quotes. The following are examples of proper and improper usage of quotes and attribute/value pairs.
+
+      p Correct:
+      pre
+        code.language-html.
+          &lt;input type=&quot;text&quot; name=&quot;email&quot; /&gt;
+
+      p Incorrect::
+      pre
+        code.language-html.
+          &lt;input type=text name=email&gt;
+
+      h3 Indentation
+
+      h3
 
       h2#scss-css SCSS/CSS
 
-      p 🚀🚀🚀
+      h3 Structure
 
-      h2#js JS
+      p There are plenty of different methods for structuring a stylesheet. With the CSS in core, it is important to retain a high degree of legibility. This enables subsequent contributors to have a clear understanding of the flow of the document.
 
-      p 🚀🚀🚀
+      ul
+        li Use 2 spaces, not tabs, to indent each property.
+        li Add two blank lines between sections and one blank line between blocks in a section.
+        li Each selector should be on its own line, ending in either a comma or an opening curly brace. Property-value pairs should be on their own line, with one tab of indentation and an ending semicolon. The closing brace should be flush left, using the same level of indentation as the opening selector.
 
-      h2#images Images
+      p Correct:
 
-      p 🚀🚀🚀
+      pre
+        code.language-css.
+          .selector-1,
+          .selector-2,
+          .selector-3 {
+            background: #fff;
+            color: #000;
+          }
 
-      h2#others Others
+      p Incorrect:
 
-      p 🚀🚀🚀
+      pre
+        code.language-css.
+          .selector-1, .selector-2, .selector-3 {
+            background: #fff;
+            color: #000;
+          }
+          .selector-1 { background: #fff; color: #000; }
+
+      h3 Selectors
+
+      p With specificity, comes great responsibility. Broad selectors allow us to be efficient, yet can have adverse consequences if not tested. Location-specific selectors can save us time, but will quickly lead to a cluttered stylesheet. Exercise your best judgement to create selectors that find the right balance between contributing to the overall style and layout of the DOM.
+
+      ul
+        li Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores.
+        li Use human readable selectors that describe what element(s) they style.
+        li Attribute selectors should use double quotes around values.
+        li Refrain from using over-qualified selectors, <code>div.container</code> can simply be stated as <code>.container</code>.
+
+      p Correct:
+
+      pre
+        code.language-css.
+          .comment-form {
+            margin: 1em 0;
+          }
+
+          input[type="text"] {
+            line-height: 1.1;
+          }
+
+      p Incorrect:
+
+      pre
+        code.language-css.
+
+          .commentForm { /* Avoid camelcase. */
+            margin: 0;
+          }
+
+          .comment_form { /* Avoid underscores. */
+            margin: 0;
+          }
+
+          div.comment_form { /* Avoid over-qualification. */
+            margin: 0;
+          }
+
+          .c1-xr { /* What is a c1-xr?! Use a better name. */
+            margin: 0;
+          }
+
+          input[type=text] { /* Should be [type="text"] */
+            line-height: 1.5;
+          }
+
+      h3 Properties
+
+      p Similar to selectors, properties that are too specific will hinder the flexibility of the design. Less is more. Make sure you are not repeating styling or introducing fixed dimensions (when a fluid solution is more acceptable).
+
+      ul
+        li Properties should be followed by a colon and a space.
+        li All properties and values should be lowercase, except for font names and vendor-specific properties.
+        li Use hex code for colors, or rgba() if opacity is needed. Avoid RGB format and uppercase, and shorten values when possible: <code>#fff</code> instead of <code>#FFFFFF</code>.
+        li Use shorthand, except when overriding styles, for <code>background</code>, <code>border</code>, <code>font</code>, <code>list-style</code>, <code>margin</code>, and <code>padding</code> values as much as possible. For a shorthand reference, see <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Shorthand_properties" target="_blank">CSS Shorthand</a>.
+
+      p Correct:
+
+      pre
+        code.language-css.
+          .selector {
+            background: #fff;
+            display: block;
+            margin: 0;
+            margin-left: 20px;
+          }
+
+      p Incorrect:
+
+      pre
+        code.language-css.
+          .selector {
+            background: #FFFFFF;
+            display: BLOCK;
+            margin-left: 20PX;
+            margin: 0;
+          }
+
+      h3 Property Ordering
+
+      p Group like properties together, the baseline for ordering is:
+
+      ul
+        li Display
+        li Positioning
+        li Box model
+        li Colors and Typography
+        li Other
+
+      h3 Vendor Prefixes
+
+      p We use <a href="https://github.com/postcss/autoprefixer" target="_blank">Autoprefixer</a> in our Gulp Task Runner to easily manage necessary browser prefixes, thus making the majority of this section moot. For those interested in following that output without using Gulp, vendor prefixes should go longest (-webkit-) to shortest (unprefixed). All other spacing remains as per the rest of the standards.
+
+      pre
+        code.language-css.
+          .sample-output {
+            -webkit-box-shadow: inset 0 0 1px 1px #eee;
+            -moz-box-shadow: inset 0 0 1px 1px #eee;
+            box-shadow: inset 0 0 1px 1px #eee;
+          }
+
+      h3 Values
+
+
+
+
+      p There are numerous ways to input values for properties. Follow the guidelines below to help us retain a high degree of consistency.
+
+      ul
+        li Space before the value, after the colon.
+        li Do not pad parentheses with spaces.
+        li Always end in a semicolon.
+        li Use double quotes rather than single quotes, and only when needed, such as when a font name has a space or for the values of the <code>content</code> property.
+        li Font weights should be defined using numeric values (e.g. <code>400</code> instead of <code>normal</code>, <code>700</code> rather than <code>bold</code>).
+        li 0 values should not have units unless necessary, such as with <code>transition-duration</code>.
+        li Line height should also be unit-less, unless necessary to be defined as a specific pixel value.
+        li Use a leading zero for decimal values, including in <code>rgba()</code>.
+        li Multiple comma-separated values for one property should be separated by either a space or a newline. For better readability newlines should be used for lengthier multi-part values such as those for shorthand properties like <code>box-shadow</code> and <code>text-shadow</code>, including before the first value. Values should then be indented one level in from the property.
+        li Lists of values within a value, like within <code>rgba()</code>, should be separated by a space.
+
+      p Correct:
+
+      pre
+        code.language-css.
+          .class { /* Correct usage of quotes */
+            background-image: url(images/bg.png);
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 700;
+          }
+
+          .class { /* Correct usage of zero values */
+            font-family: Georgia, serif;
+            line-height: 1.4;
+            text-shadow:
+              0 -1px 0 rgba(0, 0, 0, 0.5),
+              0 1px 0 #fff;
+          }
+
+          .class { /* Correct usage of short and lengthier multi-part values */
+            font-family: Consolas, Monaco, monospace;
+            transition-property: opacity, background, color;
+            box-shadow:
+              0 0 0 1px #5b9dd9,
+              0 0 2px 1px rgba(30, 140, 190, 0.8);
+          }
+
+      p Incorrect:
+
+      pre
+        code.language-css.
+          .class { /* Avoid missing space and semicolon */
+            background:#fff
+          }
+
+          .class { /* Avoid adding a unit on a zero value */
+            margin: 0px 0px 20px 0px;
+          }
+
+          .class {
+            font-family: Times New Roman, serif; /* Quote font names when required */
+            font-weight: bold; /* Avoid named font weights */
+            line-height: 1.4em; /* Avoid adding a unit for line height */
+          }
+
+          .class { /* Incorrect usage of multi-part values */
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5),
+                        0 1px 0 #fff;
+            box-shadow: 0 1px 0 rgba(0, 0,
+                0, 0.5),
+                0 1px 0 rgba(0,0,0,0.5);
+          }
+
+      h3 Media Queries
+
+      p Media queries allow us to gracefully degrade the DOM for different screen sizes. If you are adding any, be sure to test above and below the break-point you are targeting.
+
+      ul
+        li It is generally advisable to keep media queries grouped by media at the bottom of the stylesheet.
+        li Rule sets for media queries should be indented one level in.
+
+      p Example:
+
+      pre
+        code.language-css.
+          @media all and (max-width: 699px) and (min-width: 520px) {
+            /* Your selectors */
+          }
+      //- @TODO: Refer https://google.github.io/styleguide/htmlcssguide.html
+
+      //- h2#js JS
+
+      //- @TODO: Refer https://google.github.io/styleguide/jsguide.html
+
+      //- p 🚀🚀🚀
+
+      //- h2#images Images
+
+      //- p 🚀🚀🚀
+
+      //- h2#others Others
+
+      //- p 🚀🚀🚀
 
       //- @TODO: UPDATING
