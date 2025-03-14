@@ -134,25 +134,25 @@ block container
       ol.list-flow
         li
           figure.item-icon
-            img(src=imgPC+"/flow_step_img_01.svg", with="34", height="34", loading="lazy", alt="Place Order")
+            img(src=imgPC+"/flow_step_img_01.svg", width="34", height="34", loading="lazy", alt="Place Order")
           .item-box
             .item-title Place Order
             .item-text Start by placing your order with us. Provide all necessary details, including project requirements, preferred designs, and specific instructions to ensure we meet your expectations.
         li
           figure.item-icon
-            img(src=imgPC+"/flow_step_img_02.svg", with="34", height="34", loading="lazy", alt="Development")
+            img(src=imgPC+"/flow_step_img_02.svg", width="34", height="34", loading="lazy", alt="Development")
           .item-box
             .item-title Development
             .item-text Our expert developers begin coding your project, following industry best practices and your specifications. We ensure clean, efficient, and responsive HTML code tailored to your needs.
         li
           figure.item-icon
-            img(src=imgPC+"/flow_step_img_03.svg", with="34", height="34", loading="lazy", alt="Testing")
+            img(src=imgPC+"/flow_step_img_03.svg", width="34", height="34", loading="lazy", alt="Testing")
           .item-box
             .item-title Testing
             .item-text Before delivery, we conduct thorough testing to ensure everything works perfectly. This includes responsiveness, cross-browser compatibility, and performance checks to guarantee a seamless user experience.
         li
           figure.item-icon
-            img(src=imgPC+"/flow_step_img_04.svg", with="34", height="34", loading="lazy", alt="Delivery")
+            img(src=imgPC+"/flow_step_img_04.svg", width="34", height="34", loading="lazy", alt="Delivery")
           .item-box
             .item-title Delivery
             .item-text Once testing is complete, we deliver the final project. You’ll receive clean, optimized HTML code ready for deployment, along with any necessary documentation for easy integration.
@@ -217,7 +217,7 @@ block container
       .modal.modal-guide
         .modal-overlay
         .modal-wrapper
-          a.modal-close(href="#")
+          a.modal-close(aria-label="Close Modal" href="#")
           h3.modal-label Number of Pages
           ul.guide-list
             li The first page will be considered the Home page
@@ -241,7 +241,7 @@ block container
       .modal.modal-breakdown
         .modal-overlay
         .modal-wrapper
-          a.modal-close(href="#")
+          a.modal-close(aria-label="Close Modal" href="#")
           h3.modal-label Cost Breakdown
           table.breakdown-table.breakdown-cost
             tr
