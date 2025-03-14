@@ -2,7 +2,12 @@
 @use "../_base/base" as *;
 
 .sec-heading {
+  color: #222;
   text-align: center;
+
+  &.is-light {
+    color: #fff;
+  }
 
   small {
     display: block;
@@ -52,18 +57,19 @@
 }
 
 .sec-description {
-  font-size: 0.22rem;
   text-align: center;
 }
 
 @include desktop {
   .sec-description {
     margin-bottom: 60px;
+    font-size: 0.22rem;
   }
 }
 
 @include mobile {
   .sec-description {
     margin-bottom: 0.5rem;
+    font-size: 0.14rem;
   }
 }

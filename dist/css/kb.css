@@ -718,7 +718,11 @@ footer .button-top {
   }
 }
 .sec-heading {
+  color: #222;
   text-align: center;
+}
+.sec-heading.is-light {
+  color: #fff;
 }
 .sec-heading small {
   display: block;
@@ -760,18 +764,19 @@ footer .button-top {
   }
 }
 .sec-description {
-  font-size: 0.22rem;
   text-align: center;
 }
 
 @media print, (min-width: 768px) {
   .sec-description {
     margin-bottom: 60px;
+    font-size: 0.22rem;
   }
 }
 @media only screen and (max-width: 767.98px) {
   .sec-description {
     margin-bottom: 0.5rem;
+    font-size: 0.14rem;
   }
 }
 select {
