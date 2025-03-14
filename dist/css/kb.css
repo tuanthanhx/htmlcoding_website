@@ -395,6 +395,8 @@ header .header-nav li.is-current a {
   color: #ffb400;
 }
 header .header-nav a {
+  -webkit-transition: color ease 0.25s;
+  transition: color ease 0.25s;
   color: #666;
   text-decoration: none;
 }

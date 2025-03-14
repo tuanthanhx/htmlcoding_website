@@ -395,6 +395,8 @@ header .header-nav li.is-current a {
   color: #ffb400;
 }
 header .header-nav a {
+  -webkit-transition: color ease 0.25s;
+  transition: color ease 0.25s;
   color: #666;
   text-decoration: none;
 }
@@ -1208,10 +1210,42 @@ select option {
     margin-right: 100px;
   }
   .section-top-about .list-about .item-image {
+    position: relative;
     -webkit-box-flex: 504px;
         -ms-flex: 504px 0 0px;
             flex: 504px 0 0;
+    overflow: hidden;
     border-radius: 20px;
+  }
+  .section-top-about .list-about .item-image img {
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  }
+  .section-top-about .list-about .item-image:hover img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .section-top-about .list-about .item-image::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 0%;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+        -ms-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .section-top-about .list-about .item-image:hover::after {
+    height: 250%;
+    -webkit-transition: all 600ms linear;
+    transition: all 600ms linear;
+    background-color: transparent;
   }
   .section-top-about .list-about .item-content {
     width: 100%;
@@ -1914,6 +1948,9 @@ select option {
   display: none;
   margin: 0;
   color: #707070;
+}
+.section-top-faq .list-faq .item-text a {
+  color: #ffb400;
 }
 
 @media print, (min-width: 768px) {

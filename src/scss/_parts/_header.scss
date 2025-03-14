@@ -55,6 +55,7 @@ header {
     }
 
     a {
+      transition: color ease 0.25s;
       color: #666;
       text-decoration: none;
     }
