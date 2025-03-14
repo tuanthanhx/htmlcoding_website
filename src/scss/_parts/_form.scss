@@ -34,12 +34,6 @@ select {
   }
 }
 
-// .input-range {
-//   display: block;
-//   width: 100%;
-//   border-bottom: 2px solid orange;
-// }
-
 $range-handle-color: $color-primary !default;
 $range-handle-color-hover: #1abc9c !default;
 $range-handle-size: 20px !default;
@@ -117,6 +111,7 @@ $range-track-color: #d7dcdf;
   }
 
   .range-slider-value {
+    display: none;
     position: absolute;
     z-index: 100;
     top: -50px;

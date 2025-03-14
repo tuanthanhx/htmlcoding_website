@@ -15,6 +15,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400,700&amp;display=swap">
     <link rel="stylesheet" href="./css/top.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <!-- Google Tag Manager-->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,13 +39,14 @@
         <div class="wrapper"><a class="header-logo" href="/"><img src="./img/common/logo.svg" width="300" height="32" loading="eager" alt="HTMLCODING"></a>
           <nav class="header-nav">
             <ul>
-              <li class="is-current"><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#estimate">Estimate</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#team">Team</a></li>
-              <li class="sm"><a href="#contact">Contact</a></li>
+              <li class="is-current"><a href="./#home">Home</a></li>
+              <li><a href="./#about">About</a></li>
+              <li><a href="./#estimate">Estimate</a></li>
+              <li><a href="./#portfolio">Portfolio</a></li>
+              <li><a href="./#faq">FAQ</a></li>
+              <li><a href="./#team">Team</a></li>
+              <li><a href="./kb">KB</a></li>
+              <li class="sm"><a href="./#contact">Contact</a></li>
             </ul>
           </nav>
           <div class="header-buttons"><a class="btn btn-primary ico-envelope" href="#contact">Get in Touch</a></div>
@@ -77,7 +83,7 @@
               <li>
                 <figure class="item-image"><img src="./img/top//about_img_03.jpg" width="504" height="350" loading="lazy" alt="Creator of the True Liquid Layout Method"></figure>
                 <figure class="item-content">
-                  <h3 class="item-title">Creator of the <a href="#" target="_blank">True Liquid Responsive</a> Method</h3>
+                  <h3 class="item-title">Creator of the <a href="/kb/true-liquid-layout.html" target="_blank">True Liquid Responsive</a> Method</h3>
                   <p class="item-text">True Liquid Responsive is an innovative responsive design method that perfectly scales across all screen sizes while preserving the original design proportions, including element sizes, spacing, typography, and line breaks.</p>
                 </figure>
               </li>
@@ -85,7 +91,7 @@
                 <figure class="item-image"><img src="./img/top//about_img_04.jpg" width="504" height="350" loading="lazy" alt="Consistent Coding Standards for High-Quality Work"></figure>
                 <figure class="item-content">
                   <h3 class="item-title">Consistent Coding Standards for High-Quality Work</h3>
-                  <p class="item-text">We follow our internal strict <a href="#" target="_blank">Coding Guidelines</a> to ensure clean, consistent, and maintainable code—no matter how many developers work on your project. Have your own standards? We’re happy to follow them too!</p>
+                  <p class="item-text">We follow our internal strict <a href="/kb/guidelines.html" target="_blank">Coding Guidelines</a> to ensure clean, consistent, and maintainable code—no matter how many developers work on your project. Have your own standards? We’re happy to follow them too!</p>
                 </figure>
               </li>
               <li>
@@ -206,14 +212,14 @@
             <p class="sec-description">Not sure how much your HTML coding project will cost? Use our Coding Cost Estimator to get a quick and transparent price estimate. Simply select your project details, and we’ll calculate the cost in real-time!</p>
             <form class="estimator" method="post" action="./">
               <div class="estimator-form">
-                <div class="form-label">Number of Pages</div>
+                <div class="form-label"><span>Number of Pages</span><span class="label-info open-modal" data-modal="modal-guide"></span></div>
                 <div class="form-inputs">
                   <div class="range-slider">
                     <input class="range-slider-range" type="range" name="page_count" value="10" min="1" max="100">
                     <div class="range-slider-value">10</div>
                   </div>
                 </div>
-                <div class="form-label">Responsive Options</div>
+                <div class="form-label"><span>Responsive Option</span><span class="label-info open-modal" data-modal="modal-guide"></span></div>
                 <div class="form-inputs">
                   <select name="responsive_option">
                     <option value="desktop_only">Desktop Only</option>
@@ -222,7 +228,7 @@
                     <option value="responsive_liquid">Responsive + True Liquid Layout</option>
                   </select>
                 </div>
-                <div class="form-label">Complexity Level</div>
+                <div class="form-label"><span>Complexity Level</span><span class="label-info open-modal" data-modal="modal-guide"></span></div>
                 <div class="form-inputs">
                   <select name="complexity_level">
                     <option value="basic">Basic</option>
@@ -230,7 +236,7 @@
                     <option value="advanced">Advanced</option>
                   </select>
                 </div>
-                <div class="form-label">Delivery Speed</div>
+                <div class="form-label"><span>Delivery Speed</span><span class="label-info open-modal" data-modal="modal-guide"></span></div>
                 <div class="form-inputs">
                   <select name="delivery_speed">
                     <option value="standard" selected>Standard</option>
@@ -248,60 +254,74 @@
               </div>
             </form>
             <p class="note">The price is indicative only.<br class="sm"> For a more detailed discussion of all the services you need, use the contact form</p>
+            <div class="modal modal-guide">
+              <div class="modal-overlay"></div>
+              <div class="modal-wrapper"><a class="modal-close" href="#"></a>
+                <h3 class="modal-label">Number of Pages</h3>
+                <ul class="guide-list">
+                  <li>The first page will be considered the Home page</li>
+                  <li>Average page length is 5000px</li>
+                </ul>
+                <h3 class="modal-label">Responsive Option</h3>
+                <ul class="guide-list">
+                  <li>Desktop Only: Designed and optimized exclusively for desktop screens (typically 1024px and wider).</li>
+                  <li>Mobile Only: Designed and optimized solely for mobile devices (typically 320px-768px screens).</li>
+                  <li>Responsive: Adapts seamlessly to both desktop and mobile devices using standard responsive techniques.</li>
+                  <li>Responsive + True Liquid Layout: Advanced responsive design with percentage-based layouts that scale perfectly to any screen size. <a href="/kb/true-liquid-layout.html" target="_blank">Learn more</a></li>
+                </ul>
+                <h3 class="modal-label">Complexity Level</h3>
+                <ul class="guide-list">
+                  <li>Basic: Simple layouts with minimal features (e.g., static pages, basic text, and images).</li>
+                  <li>Intermediate: Standard website features with custom animations, like navigation menus, forms, carousels.</li>
+                  <li>Advanced: Complex designs, heavy animations, custom JavaScript, dynamic interactions, or sophisticated features.</li>
+                </ul>
+                <h3 class="modal-label">Delivery Speed</h3>
+                <ul class="guide-list">
+                  <li>Standard: Normal delivery timeline with no rush.</li>
+                  <li>Express: Faster delivery with prioritized work.</li>
+                </ul>
+              </div>
+            </div>
             <div class="modal modal-breakdown">
               <div class="modal-overlay"></div>
               <div class="modal-wrapper"><a class="modal-close" href="#"></a>
-                <h3 class="breakdown-label">Cost Breakdown</h3>
+                <h3 class="modal-label">Cost Breakdown</h3>
                 <table class="breakdown-table breakdown-cost">
                   <tr>
                     <th>Home Page</th>
-                    <td data-id="col-home-page-complexity"></td>
-                    <td data-id="col-home-page-delivery"></td>
-                    <td data-id="col-home-page-count"></td>
+                    <td data-id="col-home-page-detail"></td>
                     <td data-id="col-home-page-cost"></td>
                   </tr>
                   <tr data-id="row-inner-page">
                     <th>Inner Pages</th>
-                    <td data-id="col-inner-page-complexity"></td>
-                    <td data-id="col-inner-page-delivery"></td>
-                    <td data-id="col-inner-page-count"></td>
+                    <td data-id="col-inner-page-detail"></td>
                     <td data-id="col-inner-page-cost"></td>
                   </tr>
                   <tr>
                     <th>Total</th>
                     <td class="is-empty">&nbsp;</td>
-                    <td class="is-empty">&nbsp;</td>
-                    <td class="is-empty">&nbsp;</td>
                     <td data-id="col-total"></td>
                   </tr>
                 </table>
-                <h3 class="breakdown-label">Speed Breakdown</h3>
+                <h3 class="modal-label">Speed Breakdown</h3>
                 <table class="breakdown-table breakdown-speed">
                   <tr>
                     <th>Home Page</th>
-                    <td class="is-empty">&nbsp;</td>
-                    <td class="is-empty">&nbsp;</td>
-                    <td data-id="col-home-page-count"></td>
+                    <td data-id="col-home-page-detail"></td>
                     <td data-id="col-home-page-speed"></td>
                   </tr>
                   <tr data-id="row-inner-page">
                     <th>Inner Pages</th>
-                    <td class="is-empty">&nbsp;</td>
-                    <td class="is-empty">&nbsp;</td>
-                    <td data-id="col-inner-page-count"></td>
+                    <td data-id="col-inner-page-detail"></td>
                     <td data-id="col-inner-page-speed"></td>
                   </tr>
                   <tr>
                     <th>Testing</th>
                     <td class="is-empty">&nbsp;</td>
-                    <td class="is-empty">&nbsp;</td>
-                    <td class="is-empty">&nbsp;</td>
                     <td>1 day</td>
                   </tr>
                   <tr>
                     <th>Total</th>
-                    <td class="is-empty">&nbsp;</td>
-                    <td class="is-empty">&nbsp;</td>
                     <td class="is-empty">&nbsp;</td>
                     <td data-id="col-total"></td>
                   </tr>

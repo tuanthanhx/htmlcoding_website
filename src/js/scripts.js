@@ -141,8 +141,10 @@
       return false;
     });
     $('header a').on('click', () => {
-      $('header').stop().removeClass('nav-is-visible');
-      return false;
+      if (window.location.pathname === '/' || window.location.pathname === '') {
+        $('header').stop().removeClass('nav-is-visible');
+        return false;
+      }
     });
   };
 
@@ -182,7 +184,7 @@
       desktop_only: { cost: 0.5, name: 'Desktop Only' },
       mobile_only: { cost: 0.5, name: 'Mobile Only' },
       responsive: { cost: 1.0, name: 'Responsive' },
-      responsive_liquid: { cost: 1.25, name: 'Responsive Liquid' }
+      responsive_liquid: { cost: 1.25, name: 'Responsive + True Liquid Layout' }
     },
     complexityMultipliers: {
       basic: { cost: 0.5, name: 'Basic' },
@@ -229,6 +231,7 @@
     const maxPercent = isMobile() ? 96.5 : 98.5;
     const percent = minPercent + ((pageCount - minValue) * (maxPercent - minPercent)) / (maxValue - minValue);
     sliderPin.textContent = pageCount;
+    sliderPin.style.display = 'block';
     sliderPin.style.left = `${percent}%`;
 
     // 4. Update Display
@@ -242,20 +245,16 @@
     const rowCostInnerPage = document.querySelector('table.breakdown-cost tr[data-id="row-inner-page"]');
     const rowSpeedInnerPage = document.querySelector('table.breakdown-speed tr[data-id="row-inner-page"]');
 
-    const colHomePageCount = document.querySelector('table.breakdown-cost td[data-id="col-home-page-count"]');
-    const colHomePageComplexity = document.querySelector('table.breakdown-cost td[data-id="col-home-page-complexity"]');
-    const colHomePageDelivery = document.querySelector('table.breakdown-cost td[data-id="col-home-page-delivery"]');
+    const colHomePageDetail = document.querySelector('table.breakdown-cost td[data-id="col-home-page-detail"]');
     const colHomePageCost = document.querySelector('table.breakdown-cost td[data-id="col-home-page-cost"]');
     const colCostTotal = document.querySelector('table.breakdown-cost td[data-id="col-total"]');
-    const colInnerPageCount = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-count"]');
-    const colInnerPageComplexity = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-complexity"]');
-    const colInnerPageDelivery = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-delivery"]');
+    const colInnerPageDetail = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-detail"]');
     const colInnerPageCost = document.querySelector('table.breakdown-cost td[data-id="col-inner-page-cost"]');
     const colSpeedTotal = document.querySelector('table.breakdown-speed td[data-id="col-total"]');
 
-    const colHomePageCount2 = document.querySelector('table.breakdown-speed td[data-id="col-home-page-count"]');
+    const colHomePageDetail2 = document.querySelector('table.breakdown-speed td[data-id="col-home-page-detail"]');
     const colHomePageSpeed = document.querySelector('table.breakdown-speed td[data-id="col-home-page-speed"]');
-    const colInnerPageCount2 = document.querySelector('table.breakdown-speed td[data-id="col-inner-page-count"]');
+    const colInnerPageDetail2 = document.querySelector('table.breakdown-speed td[data-id="col-inner-page-detail"]');
     const colInnerPageSpeed = document.querySelector('table.breakdown-speed td[data-id="col-inner-page-speed"]');
 
     if (validatedPageCount > 1) {
@@ -269,21 +268,17 @@
     const homePageCountText = '1 page';
     const innerPageCountText = `${validatedPageCount - 1} page${validatedPageCount - 1 > 1 ? 's' : ''}`;
 
-    colHomePageCount.textContent = homePageCountText;
-    colHomePageComplexity.textContent = config.responsiveMultipliers[responsiveOption].name;
-    colHomePageDelivery.textContent = config.complexityMultipliers[complexityLevel].name;
+    colHomePageDetail.innerHTML = `${homePageCountText}<br>${config.responsiveMultipliers[responsiveOption].name}<br>${config.complexityMultipliers[complexityLevel].name} Level<br>${config.speedMultipliers[deliverySpeed].name} Speed`;
     colHomePageCost.textContent = `$${Math.round(estimatedHomePageCost).toLocaleString()}`;
     colCostTotal.textContent = `$${Math.round(estimatedTotalCost).toLocaleString()}`;
-    colInnerPageCount.textContent = innerPageCountText;
-    colInnerPageComplexity.textContent = config.responsiveMultipliers[responsiveOption].name;
-    colInnerPageDelivery.textContent = config.complexityMultipliers[complexityLevel].name;
+    colInnerPageDetail.innerHTML = `${innerPageCountText}<br>${config.responsiveMultipliers[responsiveOption].name}<br>${config.complexityMultipliers[complexityLevel].name} Level<br>${config.speedMultipliers[deliverySpeed].name} Speed`;
     colInnerPageCost.textContent = `$${Math.round(estimatedInnerPageCost).toLocaleString()}`;
     colSpeedTotal.textContent = `${Math.round(estimatedTotalSpeed)} days`;
 
 
-    colHomePageCount2.textContent = homePageCountText;
+    colHomePageDetail2.textContent = homePageCountText;
     colHomePageSpeed.textContent = `${config.homePageSpeed} day${config.homePageSpeed > 1 ? 's' : ''}`;
-    colInnerPageCount2.textContent = innerPageCountText;
+    colInnerPageDetail2.textContent = innerPageCountText;
     colInnerPageSpeed.textContent = `${Math.round(estimatedInnerPageSpeed)} day${Math.round(estimatedInnerPageSpeed) > 1 ? 's' : ''}`;
 
     return { cost: estimatedTotalCost, days: estimatedTotalSpeed };
@@ -332,7 +327,9 @@
   window.addEventListener('load', () => {
     handleModal();
     setupEventListeners();
-    calculateEstimate();
-    handleFormSubmit();
+    if (window.location.pathname === '/' || window.location.pathname === '') {
+      calculateEstimate();
+      handleFormSubmit();
+    }
   });
 })();

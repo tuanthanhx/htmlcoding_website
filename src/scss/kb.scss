@@ -1,0 +1,35 @@
+@charset "utf-8";
+@use "_base/base" as *;
+@use "_parts/header";
+@use "_parts/footer";
+@use "_parts/button";
+@use "_parts/heading";
+@use "_parts/form";
+@use "_parts/modal";
+
+body {
+  color: #666;
+  font-size: 16px;
+}
+
+.section-common-keyvisual {
+  background: #000 url("../img/common/keyvisual_bg.jpg") 50% 50% / 600px auto repeat;
+  color: #fff;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    height: 400px;
+    padding-top: 100px;
+  }
+
+  .keyvisual-title {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+.section-kb-general {
+  padding: 100px 0;
+}

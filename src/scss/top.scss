@@ -591,6 +591,24 @@
     color: #bdbbbb;
     font-weight: 700;
     line-height: 1;
+
+    .label-info {
+      display: inline-block;
+      position: relative;
+      top: -0.4em;
+      width: 1em;
+      height: 1em;
+      margin-left: 0.5em;
+      border-radius: 100%;
+      background: #ddd url("../img/common/icon_info.svg") 50% 50% / 80% auto no-repeat;
+      vertical-align: middle;
+      cursor: pointer;
+
+      &:hover {
+        transition: opacity ease 0.25s;
+        opacity: 0.8;
+      }
+    }
   }
 
   .estimator-result {

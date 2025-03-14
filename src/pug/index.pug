@@ -44,14 +44,14 @@ block container
           figure.item-image
             img(src=imgPC+"/about_img_03.jpg", width="504", height="350", loading="lazy", alt="Creator of the True Liquid Layout Method")
           figure.item-content
-            h3.item-title Creator of the <a href="#" target="_blank">True Liquid Responsive</a> Method
+            h3.item-title Creator of the <a href="/kb/true-liquid-layout.html" target="_blank">True Liquid Responsive</a> Method
             p.item-text True Liquid Responsive is an innovative responsive design method that perfectly scales across all screen sizes while preserving the original design proportions, including element sizes, spacing, typography, and line breaks.
         li
           figure.item-image
             img(src=imgPC+"/about_img_04.jpg", width="504", height="350", loading="lazy", alt="Consistent Coding Standards for High-Quality Work")
           figure.item-content
             h3.item-title Consistent Coding Standards for High-Quality Work
-            p.item-text We follow our internal strict <a href="#" target="_blank">Coding Guidelines</a> to ensure clean, consistent, and maintainable code—no matter how many developers work on your project. Have your own standards? We’re happy to follow them too!
+            p.item-text We follow our internal strict <a href="/kb/guidelines.html" target="_blank">Coding Guidelines</a> to ensure clean, consistent, and maintainable code—no matter how many developers work on your project. Have your own standards? We’re happy to follow them too!
         li
           figure.item-image
             img(src=imgPC+"/about_img_05.jpg", width="504", height="350", loading="lazy", alt="Automated Code Quality Checks for Error-Free Results")
@@ -165,20 +165,26 @@ block container
       p.sec-description Not sure how much your HTML coding project will cost? Use our Coding Cost Estimator to get a quick and transparent price estimate. Simply select your project details, and we’ll calculate the cost in real-time!
       form.estimator(method="post" action="./")
         .estimator-form
-          .form-label Number of Pages
+          .form-label
+            span Number of Pages
+            span.label-info.open-modal(data-modal="modal-guide")
           .form-inputs
             //- input.input-range(type="range" name="page_count" min="1" max="100")
             .range-slider
               input.range-slider-range(type="range" name="page_count" value="10" min="1" max="100")
               .range-slider-value 10
-          .form-label Responsive Options
+          .form-label
+            span Responsive Option
+            span.label-info.open-modal(data-modal="modal-guide")
           .form-inputs
             select(name="responsive_option")
               option(value="desktop_only") Desktop Only
               option(value="mobile_only") Mobile Only
               option(value="responsive" selected) Responsive
               option(value="responsive_liquid") Responsive + True Liquid Layout
-          .form-label Complexity Level
+          .form-label
+            span Complexity Level
+            span.label-info.open-modal(data-modal="modal-guide")
           .form-inputs
             select(name="complexity_level")
               //- option(value="basic") Basic (Simple layouts, no animation)
@@ -187,7 +193,9 @@ block container
               option(value="basic") Basic
               option(value="intermediate" selected) Intermediate
               option(value="advanced") Advanced
-          .form-label Delivery Speed
+          .form-label
+            span Delivery Speed
+            span.label-info.open-modal(data-modal="modal-guide")
           .form-inputs
             select(name="delivery_speed")
               //- option(value="standard" selected) Standard (1 page / day)
@@ -206,54 +214,64 @@ block container
 
       p.note The price is indicative only.<br class="sm"> For a more detailed discussion of all the services you need, use the contact form
 
+      .modal.modal-guide
+        .modal-overlay
+        .modal-wrapper
+          a.modal-close(href="#")
+          h3.modal-label Number of Pages
+          ul.guide-list
+            li The first page will be considered the Home page
+            li Average page length is 5000px
+          h3.modal-label Responsive Option
+          ul.guide-list
+            li Desktop Only: Designed and optimized exclusively for desktop screens (typically 1024px and wider).
+            li Mobile Only: Designed and optimized solely for mobile devices (typically 320px-768px screens).
+            li Responsive: Adapts seamlessly to both desktop and mobile devices using standard responsive techniques.
+            li Responsive + True Liquid Layout: Advanced responsive design with percentage-based layouts that scale perfectly to any screen size. <a href="/kb/true-liquid-layout.html" target="_blank">Learn more</a>
+          h3.modal-label Complexity Level
+          ul.guide-list
+            li Basic: Simple layouts with minimal features (e.g., static pages, basic text, and images).
+            li Intermediate: Standard website features with custom animations, like navigation menus, forms, carousels.
+            li Advanced: Complex designs, heavy animations, custom JavaScript, dynamic interactions, or sophisticated features.
+          h3.modal-label Delivery Speed
+          ul.guide-list
+            li Standard: Normal delivery timeline with no rush.
+            li Express: Faster delivery with prioritized work.
+
       .modal.modal-breakdown
         .modal-overlay
         .modal-wrapper
           a.modal-close(href="#")
-          h3.breakdown-label Cost Breakdown
+          h3.modal-label Cost Breakdown
           table.breakdown-table.breakdown-cost
             tr
               th Home Page
-              td(data-id="col-home-page-complexity")
-              td(data-id="col-home-page-delivery")
-              td(data-id="col-home-page-count")
+              td(data-id="col-home-page-detail")
               td(data-id="col-home-page-cost")
             tr(data-id="row-inner-page")
               th Inner Pages
-              td(data-id="col-inner-page-complexity")
-              td(data-id="col-inner-page-delivery")
-              td(data-id="col-inner-page-count")
+              td(data-id="col-inner-page-detail")
               td(data-id="col-inner-page-cost")
             tr
               th Total
               td.is-empty &nbsp;
-              td.is-empty &nbsp;
-              td.is-empty &nbsp;
               td(data-id="col-total")
-          h3.breakdown-label Speed Breakdown
+          h3.modal-label Speed Breakdown
           table.breakdown-table.breakdown-speed
             tr
               th Home Page
-              td.is-empty &nbsp;
-              td.is-empty &nbsp;
-              td(data-id="col-home-page-count")
+              td(data-id="col-home-page-detail")
               td(data-id="col-home-page-speed")
             tr(data-id="row-inner-page")
               th Inner Pages
-              td.is-empty &nbsp;
-              td.is-empty &nbsp;
-              td(data-id="col-inner-page-count")
+              td(data-id="col-inner-page-detail")
               td(data-id="col-inner-page-speed")
             tr
               th Testing
               td.is-empty &nbsp;
-              td.is-empty &nbsp;
-              td.is-empty &nbsp;
               td 1 day
             tr
               th Total
-              td.is-empty &nbsp;
-              td.is-empty &nbsp;
               td.is-empty &nbsp;
               td(data-id="col-total")
 
