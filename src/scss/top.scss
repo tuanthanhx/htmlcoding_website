@@ -599,13 +599,13 @@
       width: 1em;
       height: 1em;
       margin-left: 0.5em;
+      transition: opacity ease 0.25s;
       border-radius: 100%;
       background: #ddd url("../img/common/icon_info.svg") 50% 50% / 80% auto no-repeat;
       vertical-align: middle;
       cursor: pointer;
 
       &:hover {
-        transition: opacity ease 0.25s;
         opacity: 0.8;
       }
     }

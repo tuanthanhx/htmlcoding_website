@@ -1,0 +1,39 @@
+extends ../_layouts/default
+
+block vars
+  -path = ".."
+  -pageID = "kb"
+  -pageTitle = "Templates - HTMLCODING Knowledge Base"
+  -pageDescription = "Templates - HTMLCODING Knowledge Base"
+  -pageKeywords = ""
+  -imgPC = path+"/img/kb/"
+  -imgSP = path+"/img/kb/sp/"
+  -imgCommonPC = path+"/img/common/"
+  -imgCommonSP = path+"/img/common/sp/"
+
+block container
+
+  section.section-common-keyvisual
+    .wrapper
+      .keyvisual-title Knowledge Base
+
+  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/kb", label: "Knowledge Base"}, {label: "Templates"}])
+
+  section.section-kb-article.post
+    .wrapper
+      figure.post-cover
+        img(src=imgPC+"img_250316.jpg", width="1232", height="600", loading="eager", alt="Templates")
+
+      h1 Templates
+
+      +postMeta('2025-03-14', null, true)
+
+      //- h2#sliders Sliders
+
+      //- p 🚀🚀🚀
+
+      //- h2#forms Forms
+
+      //- p 🚀🚀🚀
+
+      //- @TODO: UPDATING

@@ -4,6 +4,7 @@
 .btn {
   display: inline-flex;
   align-items: center;
+  transition: opacity ease 0.25s;
   color: #fff;
   font-weight: 700;
   line-height: 1;
@@ -11,7 +12,6 @@
   cursor: pointer;
 
   &:hover {
-    transition: opacity ease 0.25s;
     opacity: 0.8;
   }
 

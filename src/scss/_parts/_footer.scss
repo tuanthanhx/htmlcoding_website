@@ -31,9 +31,9 @@ footer {
       bottom: 20px;
       width: 60px;
       height: 60px;
+      transition: opacity ease 0.25s;
 
       &:hover {
-        transition: opacity ease 0.25s;
         opacity: 0.8;
       }
     }

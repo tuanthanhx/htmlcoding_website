@@ -1,0 +1,90 @@
+@charset "utf-8";
+@use "../_base/base" as *;
+
+.post {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5em;
+    color: #222;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  code:not([class*="language-"]) {
+    padding: 0.1em 0.25em 0.2em;
+    border: 1px solid rgb(228, 231, 235);
+    border-radius: 0.02rem;
+    background-color: rgba(38, 50, 56, 0.04);
+    color: $color-primary;
+    font-family: Courier, monospace;
+    word-break: break-word;
+  }
+
+  // code[class*="language-"],
+
+  pre[class*="language-"] {
+    line-height: 1.6;
+  }
+}
+
+@include desktop {
+  .post {
+    pre[class*="language-"] {
+      max-height: 500px;
+      font-size: 16px;
+    }
+  }
+}
+
+@include mobile {
+  .post {
+    pre[class*="language-"] {
+      max-height: 3.35rem;
+      font-size: 0.13rem;
+    }
+  }
+}
+
+.post-cover {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.post-meta {
+  margin-bottom: 3em;
+  color: #707070;
+
+  .post-read-time {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-top: -0.05em;
+      margin-right: 0.25em;
+      background: url("../img/common/icon_watch.svg") 50% 50% / 100% auto no-repeat;
+      vertical-align: middle;
+    }
+  }
+}

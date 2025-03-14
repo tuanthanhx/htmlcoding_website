@@ -3,8 +3,8 @@ extends ../_layouts/default
 block vars
   -path = ".."
   -pageID = "kb"
-  -pageTitle = "Guidelines - HTMLCODING Knowledge Base"
-  -pageDescription = "Guidelines - HTMLCODING Knowledge Base"
+  -pageTitle = "Coding Guidelines - HTMLCODING Knowledge Base"
+  -pageDescription = "Coding Guidelines - HTMLCODING Knowledge Base"
   -pageKeywords = ""
   -imgPC = path+"/img/kb/"
   -imgSP = path+"/img/kb/sp/"
@@ -15,13 +15,41 @@ block container
 
   section.section-common-keyvisual
     .wrapper
-      h1.keyvisual-title Guidelines
+      .keyvisual-title Knowledge Base
 
-  section.section-kb-general
+  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/kb", label: "Knowledge Base"}, {label: "Guidelines"}])
+
+  section.section-kb-article.post
     .wrapper
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
+      figure.post-cover
+        img(src=imgPC+"img_250315.jpg", width="1232", height="600", loading="eager", alt="Coding Guidelines")
+
+      h1 Coding Guidelines
+
+      +postMeta('2025-03-14', null, true)
+
+      h2#general General
+
+      p 🚀🚀🚀
+
+      h2#pug-html PUG/HTML
+
+      p 🚀🚀🚀
+
+      h2#scss-css SCSS/CSS
+
+      p 🚀🚀🚀
+
+      h2#js JS
+
+      p 🚀🚀🚀
+
+      h2#images Images
+
+      p 🚀🚀🚀
+
+      h2#others Others
+
+      p 🚀🚀🚀
+
+      //- @TODO: UPDATING

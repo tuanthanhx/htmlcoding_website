@@ -1,0 +1,59 @@
+extends ../_layouts/default
+
+block vars
+  -path = ".."
+  -pageID = "kb"
+  -pageTitle = "Creating a Responsive Font Size in a Range of Screen Sizes with clamp() and vw in CSS - HTMLCODING Knowledge Base"
+  -pageDescription = "Creating a Responsive Font Size in a Range of Screen Sizes with clamp() and vw in CSS - HTMLCODING Knowledge Base"
+  -pageKeywords = ""
+  -imgPC = path+"/img/kb/"
+  -imgSP = path+"/img/kb/sp/"
+  -imgCommonPC = path+"/img/common/"
+  -imgCommonSP = path+"/img/common/sp/"
+
+block container
+
+  section.section-common-keyvisual
+    .wrapper
+      .keyvisual-title Knowledge Base
+
+  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/kb", label: "Knowledge Base"}, {label: "Creating a Responsive Font Size in a Range of Screen Sizes with clamp() and vw in CSS"}])
+
+  section.section-kb-article.post
+    .wrapper
+      figure.post-cover
+        img(src=imgPC+"img_250314.jpg", width="1232", height="600", loading="eager", alt="Creating a Responsive Font Size in a Range of Screen Sizes with clamp() and vw in CSS")
+
+      h1 Creating a Responsive Font Size in a Range of Screen Sizes with clamp() and vw in CSS
+
+      +postMeta('2024-12-25', 4)
+
+      h2 Introduction
+
+      p When designing responsive websites, ensuring that text scales smoothly across different screen sizes improves readability and aesthetics. A great way to achieve this is using the <code>clamp()</code> function in CSS, combined with <code>vw</code> (viewport width). This tutorial will guide you through creating a responsive font size that adheres to specific constraints. Let’s get started! 🚀
+
+      //- @TODO: UPDATING
+
+      //- pre
+      //-   code.language-javascript
+      //-     | Prism.plugins.toolbar.registerButton('select-code', function(env) {
+      //-     | 	var button = document.createElement('button');
+      //-     | 	button.innerHTML = 'Select Code';
+      //-     |
+      //-     | 	button.addEventListener('click', function () {
+      //-     | 		// Source: http://stackoverflow.com/a/11128179/2757940
+      //-     | 		if (document.body.createTextRange) { // ms
+      //-     | 			var range = document.body.createTextRange();
+      //-     | 			range.moveToElementText(env.element);
+      //-     | 			range.select();
+      //-     | 		} else if (window.getSelection) { // moz, opera, webkit
+      //-     | 			var selection = window.getSelection();
+      //-     | 			var range = document.createRange();
+      //-     | 			range.selectNodeContents(env.element);
+      //-     | 			selection.removeAllRanges();
+      //-     | 			selection.addRange(range);
+      //-     | 		}
+      //-     | 	});
+      //-     |
+      //-     | 	return button;
+      //-     | });

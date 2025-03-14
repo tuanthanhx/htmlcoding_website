@@ -8,3 +8,7 @@ npm run dev
 vercel dev
 vercel --prod
 ```
+
+## TODO:
+-- Active nav item depends on scroll section
+-- Fix gulp: auto copy static files (favicon, js, css)

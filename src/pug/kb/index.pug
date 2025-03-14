@@ -17,11 +17,16 @@ block container
     .wrapper
       h1.keyvisual-title Knowledge Base
 
+  +breadcrumbCommon([{href: "/", label: "Home"}, {label: "Knowledge Base"}])
+
   section.section-kb-general
     .wrapper
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non commodi asperiores, perferendis ipsam in qui illum reiciendis voluptatibus illo culpa nemo accusamus iusto, ipsa, incidunt libero laboriosam repellat eius deserunt!
+      ul.list-kb
+        li
+          a(href="/kb/guidelines.html")
+            .item-title Guidelines
+            p.item-text Coding standards are a set of rules and guidelines that ensure consistency, readability, maintainability, and reliability in development.
+        li
+          a(href="/kb/templates.html")
+            .item-title Templates
+            p.item-text A collection of code templates

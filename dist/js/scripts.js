@@ -140,10 +140,12 @@
       $('header').stop().toggleClass('nav-is-visible');
       return false;
     });
-    $('header a').on('click', () => {
+    $('header a').on('click', function () {
       if (window.location.pathname === '/' || window.location.pathname === '') {
-        $('header').stop().removeClass('nav-is-visible');
-        return false;
+        if ($(this).attr('href').include('#')) {
+          $('header').stop().removeClass('nav-is-visible');
+          return false;
+        }
       }
     });
   };
@@ -151,7 +153,7 @@
   const toggleHeaderFixed = () => {
     const header = $('header');
     $(window).on('load scroll resize', () => {
-      if ($(window).scrollTop() <= (isMobile() ? 0 : 200)) {
+      if ($(window).scrollTop() <= (isMobile() ? 0 : 50)) {
         header.addClass('is-transparent');
       } else {
         header.removeClass('is-transparent');
@@ -184,7 +186,7 @@
       desktop_only: { cost: 0.5, name: 'Desktop Only' },
       mobile_only: { cost: 0.5, name: 'Mobile Only' },
       responsive: { cost: 1.0, name: 'Responsive' },
-      responsive_liquid: { cost: 1.25, name: 'Responsive + True Liquid Layout' }
+      liquid: { cost: 1.25, name: 'True Liquid Responsive' }
     },
     complexityMultipliers: {
       basic: { cost: 0.5, name: 'Basic' },

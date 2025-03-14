@@ -20,9 +20,9 @@ html(lang="en")
     title=pageTitle
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Poppins:wght@400,700&display=swap' )
-    //- if(["top"].includes(pageID))
-    //-   link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400,700&display=swap" )
+    if(["kb"].includes(pageID))
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css")
     link(rel="stylesheet" href=`${path}/css/${pageID.replace(/-/gi,'_')}.css`)
     link(rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96")
     link(rel="icon" type="image/svg+xml" href="/favicon.svg")
@@ -32,10 +32,10 @@ html(lang="en")
     // Google Tag Manager
     script.
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-W753DCMN');
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W753DCMN');
     // End Google Tag Manager
   body
     // Google Tag Manager (noscript)
@@ -47,6 +47,6 @@ html(lang="en")
         block container
       include ../_parts/footer
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js")
-    if(["top"].includes(pageID))
-      script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js")
+    if(["kb"].includes(pageID))
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js")
     script(src=path+"/js/scripts.js")

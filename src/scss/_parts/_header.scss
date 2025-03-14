@@ -95,9 +95,9 @@ header {
 
     .header-logo {
       width: 300px;
+      transition: opacity ease 0.25s;
 
       &:hover {
-        transition: opacity ease 0.25s;
         opacity: 0.8;
       }
     }

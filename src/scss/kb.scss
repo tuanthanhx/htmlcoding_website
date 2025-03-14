@@ -6,11 +6,8 @@
 @use "_parts/heading";
 @use "_parts/form";
 @use "_parts/modal";
-
-body {
-  color: #666;
-  font-size: 16px;
-}
+@use "_parts/post";
+@use "_parts/breadcrumb";
 
 .section-common-keyvisual {
   background: #000 url("../img/common/keyvisual_bg.jpg") 50% 50% / 600px auto repeat;
@@ -26,10 +23,67 @@ body {
   .keyvisual-title {
     width: 100%;
     font-size: 40px;
+    font-weight: 700;
     text-align: center;
   }
 }
 
-.section-kb-general {
-  padding: 100px 0;
+@include desktop {
+  .section-kb-general {
+    margin-bottom: 50px;
+  }
+}
+
+@include mobile {
+  .section-kb-general {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@include desktop {
+  .section-kb-article {
+    margin-bottom: 200px;
+  }
+}
+
+@include mobile {
+  .section-kb-article {
+    margin-bottom: 1rem;
+  }
+}
+
+.list-kb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 30px;
+    transition: background ease 0.25s;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .item-title {
+    margin: 0 0 20px;
+    color: #222;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .item-text {
+    margin: 0;
+  }
 }

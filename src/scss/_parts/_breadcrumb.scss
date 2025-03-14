@@ -1,0 +1,56 @@
+@charset "utf-8";
+@use "../_base/base" as *;
+
+.breadcrumb-common {
+  .wrapper {
+    margin: 0 auto;
+
+    // padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline;
+
+    &:not(:last-child)::after {
+      content: "";
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      margin-top: -0.1em;
+      margin-right: 0.3em;
+      margin-left: 0.3em;
+      background: url("../img/common/icon_arrow_breadcrumb.svg") 50% 50% / contain no-repeat;
+      vertical-align: middle;
+    }
+  }
+
+  a {
+    transition: opacity ease 0.25s;
+    color: #8f8f8f;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@include desktop {
+  .breadcrumb-common {
+    padding: 50px 0;
+
+    li {
+      font-size: 16px;
+    }
+  }
+}
+
+@include mobile {
+  .breadcrumb-common {
+    padding: 0.3rem 0;
+
+    li {
+      font-size: 0.13rem;
+    }
+  }
+}

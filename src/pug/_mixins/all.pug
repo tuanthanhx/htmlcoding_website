@@ -1,1 +1,8 @@
 include ../_parts/breadcrumb
+
+mixin postMeta(date, readTime, isUpdated)
+  .post-meta
+    time.post-date(datetime=new Date(date).toISOString())
+      | #{isUpdated ? 'Updated on' : 'Posted on'} #{new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+    if readTime
+      .post-read-time #{readTime} min read
