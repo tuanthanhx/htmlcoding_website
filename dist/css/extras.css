@@ -409,7 +409,7 @@ header.is-transparent .header-logo img {
 header.is-transparent .header-logo::after {
   opacity: 1;
 }
-header.is-transparent .header-nav a:not(:hover) {
+header.is-transparent .header-nav li:not(.is-current) a:not(:hover) {
   color: #fff;
 }
 
