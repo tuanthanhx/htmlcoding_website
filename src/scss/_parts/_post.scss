@@ -12,6 +12,12 @@
     color: #222;
   }
 
+  p {
+    &.is-compact {
+      margin-bottom: 0.5em;
+    }
+  }
+
   em,
   i {
     font-style: italic;
@@ -23,7 +29,7 @@
   }
 
   a {
-    color: $color-primary;
+    color: #b17d00;
     text-decoration: none;
 
     &:hover {
@@ -32,16 +38,15 @@
   }
 
   code:not([class*="language-"]) {
-    padding: 0.1em 0.25em 0.2em;
+    padding: 0.05em 0.2em 0.1em;
     border: 1px solid rgb(228, 231, 235);
     border-radius: 0.02rem;
     background-color: rgba(38, 50, 56, 0.04);
-    color: $color-primary;
+    color: #b17d00;
     font-family: Courier, monospace;
     word-break: break-word;
+    vertical-align: middle;
   }
-
-  // code[class*="language-"],
 
   pre[class*="language-"] {
     margin-bottom: 1.5em;
@@ -93,4 +98,9 @@
       vertical-align: middle;
     }
   }
+}
+
+.post-separator {
+  display: block;
+  height: 5em;
 }

@@ -1144,7 +1144,7 @@ select option {
   }
 }
 .section-top-about {
-  background: #f2f2f2;
+  background: #fff;
 }
 .section-top-about .sec-description {
   color: #707070;
@@ -1278,6 +1278,9 @@ select option {
     margin-bottom: 0.2rem;
     font-size: 0.2rem;
   }
+}
+.section-top-cta {
+  background: #f7f8ff;
 }
 .section-top-cta .sec-button {
   text-align: center;

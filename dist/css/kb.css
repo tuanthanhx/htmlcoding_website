@@ -1085,6 +1085,9 @@ select option {
   margin-top: 1.5em;
   color: #222;
 }
+.post p.is-compact {
+  margin-bottom: 0.5em;
+}
 .post em,
 .post i {
   font-style: italic;
@@ -1094,20 +1097,21 @@ select option {
   font-weight: 700;
 }
 .post a {
-  color: #ffb400;
+  color: #b17d00;
   text-decoration: none;
 }
 .post a:hover {
   text-decoration: underline;
 }
 .post code:not([class*=language-]) {
-  padding: 0.1em 0.25em 0.2em;
+  padding: 0.05em 0.2em 0.1em;
   border: 1px solid rgb(228, 231, 235);
   border-radius: 0.02rem;
   background-color: rgba(38, 50, 56, 0.04);
-  color: #ffb400;
+  color: #b17d00;
   font-family: Courier, monospace;
   word-break: break-word;
+  vertical-align: middle;
 }
 .post pre[class*=language-] {
   margin-bottom: 1.5em;
@@ -1149,6 +1153,11 @@ select option {
   margin-right: 0.25em;
   background: url("../img/common/icon_watch.svg") 50% 50%/100% auto no-repeat;
   vertical-align: middle;
+}
+
+.post-separator {
+  display: block;
+  height: 5em;
 }
 
 .breadcrumb-common .wrapper {
