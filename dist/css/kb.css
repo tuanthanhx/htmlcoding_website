@@ -1217,16 +1217,31 @@ select option {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 400px;
-  padding-top: 100px;
 }
 .section-common-keyvisual .keyvisual-title {
   width: 100%;
-  font-size: 40px;
   font-weight: 700;
   text-align: center;
 }
 
+@media print, (min-width: 768px) {
+  .section-common-keyvisual .wrapper {
+    height: 400px;
+    padding-top: 100px;
+  }
+  .section-common-keyvisual .keyvisual-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .section-common-keyvisual .wrapper {
+    height: 2rem;
+    padding-top: 0.5rem;
+  }
+  .section-common-keyvisual .keyvisual-title {
+    font-size: 0.26rem;
+  }
+}
 @media print, (min-width: 768px) {
   .section-kb-general {
     margin-bottom: 50px;
@@ -1288,6 +1303,9 @@ select option {
 }
 .browser-group .col {
   width: 49%;
+}
+.browser-group .col .col-name {
+  margin: 10px 0 0;
 }
 
 .browser-simulator {

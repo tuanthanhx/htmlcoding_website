@@ -16,15 +16,38 @@
   .wrapper {
     display: flex;
     align-items: center;
-    height: 400px;
-    padding-top: 100px;
   }
 
   .keyvisual-title {
     width: 100%;
-    font-size: 40px;
     font-weight: 700;
     text-align: center;
+  }
+}
+
+@include desktop {
+  .section-common-keyvisual {
+    .wrapper {
+      height: 400px;
+      padding-top: 100px;
+    }
+
+    .keyvisual-title {
+      font-size: 40px;
+    }
+  }
+}
+
+@include mobile {
+  .section-common-keyvisual {
+    .wrapper {
+      height: 2rem;
+      padding-top: 0.5rem;
+    }
+
+    .keyvisual-title {
+      font-size: 0.26rem;
+    }
   }
 }
 
@@ -95,6 +118,10 @@
 
   .col {
     width: 49%;
+
+    .col-name {
+      margin: 10px 0 0;
+    }
   }
 }
 
