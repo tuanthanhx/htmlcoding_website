@@ -25,6 +25,7 @@ const paths = {
   scss: 'src/scss/**/*.scss',
   js: 'src/js/**/*.js',
   img: 'src/img/**/*.{png,jpg,jpeg,gif,svg,webp}',
+  public: 'src/public/**/*',
   dist: 'dist'
 };
 
@@ -116,6 +117,9 @@ const processImages = () => gulp.src(paths.img, { encoding: false })
   ]))
   .pipe(gulp.dest(`${paths.dist}/img`));
 
+const copyPublic = () => gulp.src(paths.public)
+  .pipe(gulp.dest(paths.dist));
+
 const watchFiles = () => {
   gulp.watch(paths.pug, gulp.series(lintPug, compilePug));
   gulp.watch(paths.scss, gulp.series(lintSass, compileSass));
@@ -161,6 +165,10 @@ const imagemin = gulp.series(
   processImages
 );
 
+const copy = gulp.series(
+  copyPublic
+);
+
 const lint = gulp.series(
   gulp.parallel(lintPug, lintSass, lintJs),
   gulp.parallel(compilePug, compileJs, compileSass)
@@ -187,6 +195,7 @@ export {
   watch,
   develop,
   imagemin,
+  copy,
   lint,
   lintPugAndBuild,
   lintSassAndBuild,

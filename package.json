@@ -6,6 +6,7 @@
     "dev": "gulp develop",
     "watch": "gulp watch",
     "imagemin": "gulp imagemin",
+    "copy": "gulp copy",
     "lint": "gulp lint",
     "lint:pug": "gulp lintPugAndBuild",
     "lint:sass": "gulp lintSassAndBuild",

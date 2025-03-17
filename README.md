@@ -10,5 +10,4 @@ vercel --prod
 ```
 
 ## TODO:
--- Active nav item depends on scroll section
--- Fix gulp: auto copy static files (favicon, js, css)
+-- Active nav item depends on scroll section + auto close after click on SP
