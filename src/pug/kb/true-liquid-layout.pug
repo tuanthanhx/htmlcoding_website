@@ -29,62 +29,97 @@ block container
 
       +postMeta('2020-02-25', 4)
 
-      p In the ever-evolving world of web design, creating layouts that adapt seamlessly across a wide range of devices is no longer a luxury—it’s a necessity. Two approaches have emerged as frontrunners in this space: <em>Traditional Responsive Layout</em> and the newer, more fluid <em>True Liquid Layout</em>. While both aim to ensure a website looks great whether viewed on a desktop monitor or a smartphone screen, their methods and outcomes differ significantly. Let’s explore what sets them apart and why True Liquid Layout is gaining attention as an advanced solution.
+      p In today’s world of web design, making websites work well on all devices—like phones, tablets, or computers—is super important. Two main ways to do this are <em>Traditional Responsive Layout</em> and a newer idea called <em>True Liquid Layout</em>. Both try to make websites look good on any screen, but they do it differently. Let’s look at what makes them special and why True Liquid Layout is becoming popular as a smart, modern choice.
 
       h2 What is Traditional Responsive Layout?
 
-      p Traditional Responsive Layout has been the cornerstone of adaptive web development for over a decade. Introduced by Ethan Marcotte in 2010, it relies on a combination of flexible grids, media queries, and relative units to adapt a website’s layout to different screen sizes. The goal is simple yet powerful: ensure a site looks and functions well on both desktop and mobile devices.
+      p Traditional Responsive Layout is a popular way to make websites work on all devices. It started in 2010 by Ethan Marcotte and has been used for over ten years. This method uses flexible grids, special rules called media queries, and units that adjust to fit different screen sizes. The idea is simple: make a website look good and work well on both computers and phones.
 
-      p In practice, responsive design typically uses predefined breakpoints—specific screen widths (e.g., 1024px for desktops, 768px for tablets, 320px for phones)—where the layout shifts or "responds" to fit the device. For example, a three-column desktop layout might stack into two columns on a tablet and a single column on a mobile screen. This adaptability is achieved through CSS media queries that apply different styles based on the viewport size. It’s a robust, widely adopted approach that has made the web more accessible and user-friendly across devices.
+      p Here’s how it works. Designers set specific points—called breakpoints—like 1024px for computers, 768px for tablets, and 320px for phones. At these points, the layout changes to match the screen. For example, a website might show three columns on a computer, two on a tablet, and one on a phone. CSS media queries help switch the styles based on the screen size. This way has made websites easier to use on all devices.
 
-      p However, traditional responsive design has its limitations. Breakpoints are static, meaning they’re tailored to common device sizes at the time of development. As new devices with unique resolutions emerge, these fixed points can feel less flexible, sometimes resulting in awkward layouts or additional maintenance to keep the design current.
+      p But it’s not perfect. Breakpoints are fixed and based on common screen sizes from when the site was made. When new devices with different sizes come out, these fixed points don’t always work well. This can make layouts look strange or need extra updates to stay good.
 
       h2 The Birth of True Liquid Layout
 
-      p True Liquid Layout takes the principles of responsive design and pushes them to new heights, offering a more dynamic and scalable solution. This innovative approach was conceived in 2014 by Tuan Thanh Ngo, a member of the HTMLCODING Team, while working for a Japanese company with exceptionally strict design requirements. The company demanded layouts that adhered precisely to their vision across all devices—a challenge that traditional responsive design, with its reliance on fixed breakpoints, struggled to meet. Frustrated by these limitations, he devised a more extreme form of responsiveness: a system where everything adapts fluidly.
+      p True Liquid Layout takes responsive design further and makes it more flexible. It was created in 2014 by Tuan Thanh Ngo from the HTMLCODING Team. They were working for some Japanese customers who wanted designs to look exactly right on every device. Traditional responsive design, with its fixed breakpoints, couldn’t do this well. So, he came up with a new idea: a layout that adjusts smoothly to any screen.
 
-      p At its core, True Liquid Layout is an advanced form of responsive design that relies heavily on percentage-based layouts rather than fixed breakpoints. Instead of snapping to specific widths, it scales proportionally to any screen size, ensuring a consistent and polished appearance regardless of the device. By leveraging a variety of relative units—such as <code>%</code>, <code>vw</code>, <code>vh</code>, <code>rem</code>, <code>em</code>, and the CSS function <code>calc()</code>—this approach creates a design that feels "liquid," flowing effortlessly to fill the available space. More recently, the <code>clamp()</code> function has also been utilized to enhance its flexibility, allowing elements to scale smoothly within defined bounds—a technique further explored in our article, <a href="/kb/creating-a-responsive-font-size-in-a-range-of-screen-sizes-with-clamp-and-vw-in-css.html">"Creating a Responsive Font Size in a Range of Screen Sizes with clamp() and vw in CSS"</a>, which ties closely to the principles of True Liquid Layout.
-
-      p Imagine a webpage where every element—columns, images, text blocks—adjusts smoothly as the browser window resizes, without relying on rigid thresholds. That’s the essence of True Liquid Layout. For example, in a traditional responsive design, a sidebar might take up 33% of the screen width at a desktop breakpoint (e.g., above 1024px) but collapse entirely below a mobile breakpoint (e.g., 768px). In True Liquid Layout, that sidebar might scale proportionally from 33% to 20% to 10% as the screen narrows, never fully disappearing unless explicitly designed to do so. This results in a more organic, continuous adaptation that feels tailor-made for every viewport.
+      p True Liquid Layout uses percentages instead of set breakpoints. This means the design doesn’t jump at specific widths—it grows or shrinks to fit any screen size perfectly. It uses tools like %, vw, vh, and a CSS trick called calc() to make everything look consistent. The result is a "liquid" design that flows and stays true to the original idea, no matter the device.
 
       h2 Key Differences
+
+      p.md Imagine a webpage where every element, images, and text—changes smoothly when you resize the browser. It doesn’t use strict sizes to decide how to adjust. Below is a demo of this. Try dragging the right edge of each browser to see how it works.
+
+      .browser-group.md
+        .col
+           .browser-simulator
+            .simulator-resizer
+            .simulator-header
+              .header-address
+                .address-bar
+              .header-buttons
+                span.btn-add
+                span.btn-tab
+            .simulator-body
+              .example-page
+                .example-page-header
+                  .example-logo LOGO
+                  .example-hamburger
+                .example-page-body
+                  .example-title お支払いも<br>お金の管理も<br>かんたんに
+                  .example-text Visaプリペイドカードとスマホで、いつでもどこでも、かんたんにお支払い。<br>アプリへのリアルタイムな履歴反映や自動カテゴリー分類で、お金の管理もかんたんに。
+                  .example-buttons
+                    img(src=imgPC+"/example_btn_01.svg", alt="App Store")
+                    img(src=imgPC+"/example_btn_02.svg", alt="Google Play")
+        .col
+          .browser-simulator.is-liquid
+            .simulator-resizer
+            .simulator-header
+              .header-address
+                .address-bar
+              .header-buttons
+                span.btn-add
+                span.btn-tab
+            .simulator-body
+              .example-page
+                .example-page-header
+                  .example-logo LOGO
+                  .example-hamburger
+                .example-page-body
+                  .example-title お支払いも<br>お金の管理も<br>かんたんに
+                  .example-text Visaプリペイドカードとスマホで、いつでもどこでも、かんたんにお支払い。<br>アプリへのリアルタイムな履歴反映や自動カテゴリー分類で、お金の管理もかんたんに。
+                  .example-buttons
+                    img(src=imgPC+"/example_btn_01.svg", alt="App Store")
+                    img(src=imgPC+"/example_btn_02.svg", alt="Google Play")
 
       ol
         li
           | Flexibility and Scalability
           ul
-            li <em>Responsive Layout</em>: Relies on fixed breakpoints, which can limit adaptability to unexpected screen sizes or require frequent updates as device diversity grows.
-            li <em>True Liquid Layout</em>: Scales seamlessly to any resolution using percentage-based measurements, reducing the need for breakpoint-specific tweaks.
+            li <em>Responsive Layout</em>: Uses fixed points (breakpoints) to change the design. This can make it hard to fit new or unusual screen sizes and might need updates often.
+            li <em>True Liquid Layout</em>: Adjusts to any screen size using percentages. It doesn’t need extra fixes for different devices.
         li
           | Granularity of Control
           ul
-            li <em>Responsive Layout</em>: Offers discrete layout shifts at predefined points, which can sometimes lead to jarring transitions or suboptimal designs between breakpoints.
-            li <em>True Liquid Layout</em>: Provides a smoother, more gradual adjustment, maintaining visual harmony across the entire spectrum of screen sizes.
-        li
-          | Development Approach
-          ul
-            li <em>Responsive Layout</em>: Often involves writing media queries for specific device categories (e.g., desktop, tablet, phone), which can increase CSS complexity.
-            li <em>True Liquid Layout</em>: Emphasizes fluid grids and proportional scaling from the start, potentially simplifying the codebase by minimizing reliance on media queries.
+            li <em>Responsive Layout</em>: Changes the layout at set points. Sometimes, this makes the design jump or look odd between those points.
+            li <em>True Liquid Layout</em>: Adjusts little by little, so it looks smooth and nice on all screen sizes.
         li
           | User Experience
           ul
-            li <em>Responsive Layout</em>: Excels at delivering device-optimized layouts but may not account for edge cases like ultra-wide monitors or foldable screens.
-            li <em>True Liquid Layout</em>: Feels more future-proof, adapting naturally to unconventional or emerging screen sizes without additional intervention.
+            li <em>Responsive Layout</em>: Works great for common devices but might struggle with rare ones, like super-wide screens or foldable phones.
+            li <em>True Liquid Layout</em>: Feels ready for the future. It fits new or unusual screens without extra work.
 
       h2 Why True Liquid Layout Matters
 
-      p As the variety of devices accessing the web continues to expand—think smartwatches, foldable phones, and massive 4K displays—static breakpoints alone can struggle to keep up. True Liquid Layout offers a forward-thinking alternative that aligns with the web’s inherently fluid nature. It’s not just about adapting to today’s devices; it’s about building designs that remain relevant as technology evolves.
+      p Today, more devices use the web—like smartwatches and foldable phones. Fixed breakpoints in traditional design can’t always keep up with these changes. True Liquid Layout offers a smart solution. It fits the web’s natural ability to adjust and works well not just for now, but for new tech in the future too.
 
-      p Moreover, True Liquid Layout can enhance performance and accessibility. By reducing reliance on complex media queries and heavy-handed CSS overrides, it can streamline development and improve load times. For users, the smooth scaling ensures content remains legible and layouts stay intuitive, no matter the screen.
+      p Plus, it can make websites faster and easier to use. It doesn’t need lots of complicated rules or extra CSS, so pages load quicker. For users, everything stays clear and simple to read, no matter what screen they’re on.
 
       h2 Challenges and Considerations
 
-      p That said, True Liquid Layout isn’t without its hurdles. Designing with percentages requires careful planning to avoid elements becoming too cramped or overly stretched. Developers must also ensure that typography, images, and interactive elements scale appropriately—tasks that may demand more sophisticated CSS techniques or testing across a broader range of viewports.
-
-      p In contrast, traditional responsive design’s breakpoint system is more predictable and easier to conceptualize for many designers, especially those accustomed to designing for specific device classes. True Liquid Layout asks for a shift in mindset: thinking in terms of fluidity rather than fixed states.
+      p True Liquid Layout isn’t perfect, though. Using percentages means you have to plan carefully. If not, things might look too squished or too stretched. On the other hand, traditional responsive design is easier to understand. Its breakpoint system is simple and predictable, especially for designers used to working with common devices. True Liquid Layout asks you to think differently—about smooth changes instead of set points.
 
       h2 Conclusion
 
-      p Both Traditional Responsive Layout and True Liquid Layout aim to solve the same problem—making the web accessible and enjoyable across devices—but they approach it from different angles. Responsive Layout offers a tried-and-true framework with clear control points, while True Liquid Layout pushes the boundaries of adaptability with its percentage-based, infinitely scalable philosophy. For modern web projects, especially those prioritizing longevity and flexibility, True Liquid Layout represents an exciting evolution—one that embraces the web’s limitless potential.
+      p Both Traditional Responsive Layout and True Liquid Layout try to solve the same problem: making websites work well on all devices. But they do it in different ways. Traditional Responsive Layout is good for designers who want something fast and easy. It uses set points and doesn’t worry too much about matching the design exactly. True Liquid Layout is stricter—it keeps the design perfect on every screen size, using percentages. It’s great for projects with lots of details.
 
-      p Which approach is right for your project? It depends on your goals, audience, and resources. But as screen sizes continue to diversify, True Liquid Layout is proving itself a worthy contender in the quest for the ultimate adaptive design.
+      p Which one is right for you? It depends on what you need. Traditional Responsive Layout is simple and quick. True Liquid Layout is best for detailed designs that must look the same everywhere. As screens keep changing, True Liquid Layout feels like a fresh, exciting way to make websites fit any size.

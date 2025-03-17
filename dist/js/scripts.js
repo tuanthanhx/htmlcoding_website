@@ -333,5 +333,35 @@
       calculateEstimate();
       handleFormSubmit();
     }
+
+
+    document.querySelectorAll('.browser-simulator').forEach(resizable => {
+      const resizer = resizable.querySelector('.simulator-resizer');
+      const isLiquid = resizable.classList.contains('is-liquid');
+      let isResizing = false;
+
+      resizer.addEventListener('mousedown', () => {
+        isResizing = true;
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+
+        function onMouseMove (event) {
+          if (!isResizing) { return; }
+          let newWidth = event.clientX - resizable.offsetLeft;
+          newWidth = Math.max(320, Math.min(590, newWidth));
+          resizable.style.width = `${newWidth}px`;
+          if (isLiquid) {
+            resizable.style.fontSize = `${100 * (newWidth - 4) / 375}px`;
+          }
+        }
+
+        function onMouseUp () {
+          isResizing = false;
+          document.removeEventListener('mousemove', onMouseMove);
+          document.removeEventListener('mouseup', onMouseUp);
+        }
+      });
+    });
+
   });
 })();
