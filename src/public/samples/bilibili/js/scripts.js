@@ -111,13 +111,7 @@
     anchors.on('click', (e) => triggerScroll(e.target.closest('a')));
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
-    detectBrowsers();
-    tabletViewport();
-    smoothScroll();
-  });
-
-  window.addEventListener('load', () => {
+  const initSwipper = () => {
     new Swiper('.swiper', {
       loop: true,
       slidesPerView: isMobile() ? 1 : 3,
@@ -125,6 +119,15 @@
         delay: 4000
       }
     });
+  };
 
+  document.addEventListener('DOMContentLoaded', () => {
+    detectBrowsers();
+    tabletViewport();
+    smoothScroll();
+  });
+
+  window.addEventListener('load', () => {
+    initSwipper();
   });
 })();
