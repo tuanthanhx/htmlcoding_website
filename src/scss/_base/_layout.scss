@@ -62,7 +62,7 @@ svg {
   }
 }
 
-a[target="_blank"]::after {
+a[target="_blank"]:not(.no-icon)::after {
   content: "";
   display: inline-block;
   width: 0.6em;

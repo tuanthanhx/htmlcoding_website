@@ -117,7 +117,7 @@ const processImages = () => gulp.src(paths.img, { encoding: false })
   ]))
   .pipe(gulp.dest(`${paths.dist}/img`));
 
-const copyPublic = () => gulp.src(paths.public)
+const copyPublic = () => gulp.src(paths.public, { encoding: false })
   .pipe(gulp.dest(paths.dist));
 
 const watchFiles = () => {
