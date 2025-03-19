@@ -11,6 +11,7 @@ vercel --prod
 
 ## TODO:
 -- Active nav item depends on scroll section + auto close after click on SP
+-- Add imagemap to the KV of the guidelines page
 
 
 ## EXAMPLE:

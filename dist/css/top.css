@@ -85,6 +85,16 @@ table td {
   vertical-align: middle;
 }
 
+strong,
+b {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
 q,
 blockquote {
   quotes: none;
