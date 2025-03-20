@@ -1906,14 +1906,11 @@ select option {
   }
   .section-top-portfolio .list-project li {
     position: relative;
-    width: 48%;
+    width: 100%;
     border-radius: 0.1rem;
   }
-  .section-top-portfolio .list-project li:nth-child(n+3) {
-    margin-top: 4%;
-  }
-  .section-top-portfolio .list-project li:nth-child(odd) {
-    margin-right: 4%;
+  .section-top-portfolio .list-project li:nth-child(n+2) {
+    margin-top: 0.2rem;
   }
   .section-top-portfolio .list-project li:hover .item-name {
     opacity: 1;
