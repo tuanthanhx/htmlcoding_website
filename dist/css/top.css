@@ -643,7 +643,7 @@ footer .button-top {
 @media print, (min-width: 768px) {
   footer {
     padding: 35px 0;
-    font-size: 20px;
+    font-size: 18px;
   }
   footer .button-top {
     right: 20px;
@@ -756,7 +756,7 @@ footer .button-top {
 
 @media print, (min-width: 768px) {
   .sec-heading {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
   .sec-heading small {
     margin-bottom: 20px;
@@ -785,7 +785,7 @@ footer .button-top {
 @media print, (min-width: 768px) {
   .sec-description {
     margin-bottom: 60px;
-    font-size: 0.22rem;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -1268,10 +1268,10 @@ select option {
   }
   .section-top-about .list-about .item-content .item-title {
     margin-bottom: 20px;
-    font-size: 40px;
+    font-size: 30px;
   }
   .section-top-about .list-about .item-content .item-text {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -1370,12 +1370,12 @@ select option {
     margin-bottom: 20px;
   }
   .section-top-features .list-features .item-title {
-    min-height: 76px;
+    min-height: 72px;
     margin: 0 0 20px;
-    font-size: 24px;
+    font-size: 22px;
   }
   .section-top-features .list-features .item-text {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -1512,10 +1512,10 @@ select option {
   }
   .section-top-flow .list-flow .item-title {
     margin: 0 0 20px;
-    font-size: 28px;
+    font-size: 22px;
   }
   .section-top-flow .list-flow .item-text {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -1987,11 +1987,11 @@ select option {
   }
   .section-top-faq .list-faq .item-title {
     padding: 30px 80px 30px 40px;
-    font-size: 24px;
+    font-size: 22px;
   }
   .section-top-faq .list-faq .item-text {
     padding: 0 40px 30px;
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -2002,7 +2002,7 @@ select option {
     border-radius: 0.1rem;
   }
   .section-top-faq .list-faq li::after {
-    top: 0.15rem;
+    top: 0.12rem;
     right: 0.15rem;
     width: 0.3rem;
     height: 0.3rem;
@@ -2012,7 +2012,7 @@ select option {
   }
   .section-top-faq .list-faq .item-title {
     padding: 0.15rem 0.45rem 0.15rem 0.2rem;
-    font-size: 0.18rem;
+    font-size: 0.16rem;
   }
   .section-top-faq .list-faq .item-text {
     padding: 0 0.2rem 0.15rem;
@@ -2096,7 +2096,7 @@ select option {
     font-size: 30px;
   }
   .section-top-team .list-team .item-position {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -2136,6 +2136,7 @@ select option {
 }
 .section-top-contact .sec-description a {
   color: #ffb400;
+  text-decoration: none;
 }
 .section-top-contact .form-contact {
   position: relative;
@@ -2212,6 +2213,9 @@ select option {
   }
   .section-top-contact .wrapper {
     width: 1024px;
+  }
+  .section-top-contact a:hover {
+    text-decoration: underline;
   }
   .section-top-contact .form-contact {
     margin-top: 100px;

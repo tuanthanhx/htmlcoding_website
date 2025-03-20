@@ -142,7 +142,7 @@
     });
     $('header a').on('click', function () {
       if (window.location.pathname === '/' || window.location.pathname === '') {
-        if ($(this).attr('href').include('#')) {
+        if ($(this).attr('href').includes('#')) {
           $('header').stop().removeClass('nav-is-visible');
           return false;
         }

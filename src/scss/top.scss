@@ -212,11 +212,11 @@
 
         .item-title {
           margin-bottom: 20px;
-          font-size: 40px;
+          font-size: 30px;
         }
 
         .item-text {
-          font-size: 22px;
+          font-size: 18px;
         }
       }
     }
@@ -345,13 +345,13 @@
       }
 
       .item-title {
-        min-height: 76px;
+        min-height: 72px;
         margin: 0 0 20px;
-        font-size: 24px;
+        font-size: 22px;
       }
 
       .item-text {
-        font-size: 22px;
+        font-size: 18px;
       }
     }
   }
@@ -515,11 +515,11 @@
 
       .item-title {
         margin: 0 0 20px;
-        font-size: 28px;
+        font-size: 22px;
       }
 
       .item-text {
-        font-size: 22px;
+        font-size: 18px;
       }
     }
   }
@@ -1071,12 +1071,12 @@
 
       .item-title {
         padding: 30px 80px 30px 40px;
-        font-size: 24px;
+        font-size: 22px;
       }
 
       .item-text {
         padding: 0 40px 30px;
-        font-size: 22px;
+        font-size: 18px;
       }
     }
   }
@@ -1091,7 +1091,7 @@
         border-radius: 0.1rem;
 
         &::after {
-          top: 0.15rem;
+          top: 0.12rem;
           right: 0.15rem;
           width: 0.3rem;
           height: 0.3rem;
@@ -1104,7 +1104,7 @@
 
       .item-title {
         padding: 0.15rem 0.45rem 0.15rem 0.2rem;
-        font-size: 0.18rem;
+        font-size: 0.16rem;
       }
 
       .item-text {
@@ -1199,7 +1199,7 @@
       }
 
       .item-position {
-        font-size: 24px;
+        font-size: 22px;
       }
     }
   }
@@ -1252,6 +1252,7 @@
 
     a {
       color: $color-primary;
+      text-decoration: none;
     }
   }
 
@@ -1327,6 +1328,10 @@
 
     .wrapper {
       width: 1024px;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .form-contact {
