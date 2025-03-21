@@ -928,6 +928,7 @@
       background: $color-primary;
       color: #222;
       font-weight: 700;
+      text-align: center;
       text-transform: uppercase;
     }
   }
@@ -973,11 +974,15 @@
     .list-project {
       li {
         position: relative;
-        width: 100%;
+        width: 47.5%;
         border-radius: 0.1rem;
 
-        &:nth-child(n + 2) {
-          margin-top: 0.2rem;
+        &:nth-child(n + 3) {
+          margin-top: 5%;
+        }
+
+        &:nth-child(odd) {
+          margin-right: 5%;
         }
 
         &:hover .item-name {

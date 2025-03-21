@@ -1911,6 +1911,7 @@ select option {
   background: #ffb400;
   color: #222;
   font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -1945,11 +1946,14 @@ select option {
   }
   .section-top-portfolio .list-project li {
     position: relative;
-    width: 100%;
+    width: 47.5%;
     border-radius: 0.1rem;
   }
-  .section-top-portfolio .list-project li:nth-child(n+2) {
-    margin-top: 0.2rem;
+  .section-top-portfolio .list-project li:nth-child(n+3) {
+    margin-top: 5%;
+  }
+  .section-top-portfolio .list-project li:nth-child(odd) {
+    margin-right: 5%;
   }
   .section-top-portfolio .list-project li:hover .item-name {
     opacity: 1;
