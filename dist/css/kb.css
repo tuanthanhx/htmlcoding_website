@@ -1473,3 +1473,62 @@ select option {
 .is-liquid .example-page .example-buttons img {
   width: 48%;
 }
+
+.section-kb-templates .list-templates {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+.section-kb-templates .list-templates a {
+  display: block;
+}
+.section-kb-templates .list-templates .item-image {
+  overflow: hidden;
+}
+.section-kb-templates .list-templates .item-image img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: #ccc;
+}
+.section-kb-templates .list-templates .item-title {
+  color: #222;
+  font-weight: 700;
+}
+
+@media print, (min-width: 768px) {
+  .section-kb-templates {
+    padding: 50px 0 150px;
+  }
+  .section-kb-templates .list-templates {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 28px;
+  }
+  .section-kb-templates .list-templates .item-image {
+    height: 200px;
+    border-radius: 10px;
+  }
+  .section-kb-templates .list-templates .item-title {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .section-kb-templates {
+    padding: 0.5rem 0 1rem;
+  }
+  .section-kb-templates .list-templates {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem 5%;
+  }
+  .section-kb-templates .list-templates .item-image {
+    height: 1.2rem;
+    border-radius: 0.1rem;
+  }
+  .section-kb-templates .list-templates .item-title {
+    margin-top: 0.1rem;
+    font-size: 0.14rem;
+  }
+}
