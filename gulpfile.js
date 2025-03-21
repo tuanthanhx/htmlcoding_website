@@ -3,6 +3,7 @@ import cache from 'gulp-cached';
 import changed from 'gulp-changed';
 import fs from 'fs/promises';
 import pug from 'gulp-pug';
+import pugData from 'gulp-data';
 import pugLint from 'gulp-pug-linter';
 import eslint from 'gulp-eslint-new';
 import gulpSass from 'gulp-sass';
@@ -17,6 +18,7 @@ import imageMinify, { svgo, optipng, gifsicle } from 'gulp-imagemin';
 import mozjpeg from 'imagemin-mozjpeg';
 import pngquant from 'imagemin-pngquant';
 import { create } from 'browser-sync';
+import path from 'path';
 
 const sass = gulpSass(sassPkg);
 
@@ -38,7 +40,20 @@ async function clean () {
 }
 
 function compilePug () {
-  return gulp.src([paths.pug].concat(['!src/pug/_*/**'])).pipe(pug({ pretty: true })).pipe(gulp.dest('dist'));
+  return gulp.src([paths.pug].concat(['!src/pug/_*/**']))
+    .pipe(
+      pugData((file) => {
+        let relativePath = path.relative(file.base, file.path)
+          .replace(/\\/g, '/')
+          .replace(/\.pug$/, '.html');
+        if (relativePath.endsWith('index.html')) {
+          relativePath = relativePath.replace(/index.html$/, '');
+        }
+        return { filepath: `/${relativePath}` };
+      })
+    )
+    .pipe(pug({ pretty: true }))
+    .pipe(gulp.dest('dist'));
 }
 
 function lintPug () {

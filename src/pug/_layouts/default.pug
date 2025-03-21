@@ -6,7 +6,7 @@ block vars
   var siteName = 'HTMLCODING';
   var domain= 'https://htmlcoding.net';
   var generateOgUrl = () => {
-    return domain; // @TODO: Correct URL for each page
+    return new URL(filepath, domain + '/').href;
   }
   var generateOgImage = () => {
     const img = imgOG || './img/common/og.jpg';
