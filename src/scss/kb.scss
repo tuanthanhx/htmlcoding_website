@@ -287,6 +287,11 @@
 // SECTION TEMPLATES
 
 .section-kb-templates {
+  .sec-title {
+    color: $color-dark;
+    font-weight: 700;
+  }
+
   .list-templates {
     @include reset-list;
 
@@ -316,7 +321,12 @@
 
 @include desktop {
   .section-kb-templates {
-    padding: 50px 0 150px;
+    .sec-title {
+      margin-bottom: 40px;
+      font-size: 50px;
+    }
+
+    padding: 0 0 150px;
 
     .list-templates {
       grid-template-columns: repeat(4, 1fr);
@@ -337,7 +347,12 @@
 
 @include mobile {
   .section-kb-templates {
-    padding: 0.5rem 0 1rem;
+    padding: 0 0 1rem;
+
+    .sec-title {
+      margin-bottom: 0.3rem;
+      font-size: 0.3rem;
+    }
 
     .list-templates {
       grid-template-columns: repeat(2, 1fr);

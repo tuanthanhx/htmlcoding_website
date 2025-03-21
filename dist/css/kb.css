@@ -1474,6 +1474,10 @@ select option {
   width: 48%;
 }
 
+.section-kb-templates .sec-title {
+  color: #222;
+  font-weight: 700;
+}
 .section-kb-templates .list-templates {
   margin: 0;
   padding: 0;
@@ -1500,7 +1504,11 @@ select option {
 
 @media print, (min-width: 768px) {
   .section-kb-templates {
-    padding: 50px 0 150px;
+    padding: 0 0 150px;
+  }
+  .section-kb-templates .sec-title {
+    margin-bottom: 40px;
+    font-size: 50px;
   }
   .section-kb-templates .list-templates {
     grid-template-columns: repeat(4, 1fr);
@@ -1517,7 +1525,11 @@ select option {
 }
 @media only screen and (max-width: 767.98px) {
   .section-kb-templates {
-    padding: 0.5rem 0 1rem;
+    padding: 0 0 1rem;
+  }
+  .section-kb-templates .sec-title {
+    margin-bottom: 0.3rem;
+    font-size: 0.3rem;
   }
   .section-kb-templates .list-templates {
     grid-template-columns: repeat(2, 1fr);
