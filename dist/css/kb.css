@@ -495,7 +495,7 @@ header.is-transparent .header-nav li:not(.is-current) a:not(:hover) {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    height: 0.8rem;
+    height: 0.7rem;
   }
   header .header-logo {
     width: 2.2rem;
@@ -543,7 +543,7 @@ header.is-transparent .header-nav li:not(.is-current) a:not(:hover) {
   header .button-menu {
     position: fixed;
     z-index: 2000;
-    top: 0.4rem;
+    top: 0.35rem;
     right: 0.2rem;
     width: 0.4rem;
     height: 0.4rem;
