@@ -1,13 +1,13 @@
-extends ../../_layouts/default
+extends ../_layouts/default
 
 block vars
-  -path = "../.."
-  -pageID = "kb"
-  -pageTitle = "Templates - HTMLCODING Knowledge Base"
-  -pageDescription = "Templates - HTMLCODING Knowledge Base"
+  -path = ".."
+  -pageID = "templates"
+  -pageTitle = "HTMLCODING Templates"
+  -pageDescription = "HTMLCODING Templates"
   -pageKeywords = ""
-  -imgPC = path+"/img/kb/"
-  -imgSP = path+"/img/kb/sp/"
+  -imgPC = path+"/img/templates/"
+  -imgSP = path+"/img/templates/sp/"
   -imgCommonPC = path+"/img/common/"
   -imgCommonSP = path+"/img/common/sp/"
 
@@ -15,16 +15,12 @@ block container
 
   section.section-common-keyvisual
     .wrapper
-      .keyvisual-title Knowledge Base
+      h1.keyvisual-title Carousel
 
-  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/kb", label: "Knowledge Base"}, {href: "/kb/templates", label: "Templates"}, {label: "Carousel"}])
+  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/templates", label: "Templates"}, {label: "Carousel"}])
 
-  section.section-kb-article.post
+  section.section-templates-single.post
     .wrapper
-
-      h1 Carousel
-
-      +postMeta('2025-03-20', null, true)
 
       h2 Use Swiper from CDN
 

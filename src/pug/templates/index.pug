@@ -1,13 +1,13 @@
-extends ../../_layouts/default
+extends ../_layouts/default
 
 block vars
-  -path = "../.."
-  -pageID = "kb"
-  -pageTitle = "Templates - HTMLCODING Knowledge Base"
-  -pageDescription = "Templates - HTMLCODING Knowledge Base"
+  -path = ".."
+  -pageID = "templates"
+  -pageTitle = "HTMLCODING Templates"
+  -pageDescription = "HTMLCODING Templates"
   -pageKeywords = ""
-  -imgPC = path+"/img/kb/templates/"
-  -imgSP = path+"/img/kb/templates/sp/"
+  -imgPC = path+"/img/templates/"
+  -imgSP = path+"/img/templates/sp/"
   -imgCommonPC = path+"/img/common/"
   -imgCommonSP = path+"/img/common/sp/"
 
@@ -15,18 +15,16 @@ block container
 
   section.section-common-keyvisual
     .wrapper
-      .keyvisual-title Knowledge Base
+      h1.keyvisual-title Templates
 
-  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/kb", label: "Knowledge Base"}, {label: "Templates"}])
+  +breadcrumbCommon([{href: "/", label: "Home"}, {label: "Templates"}])
 
-  section.section-kb-templates
+  section.section-templates-home
     .wrapper
-
-      h1.sec-title Templates
 
       ul.list-templates
         li
-          a.trans(href="/kb/templates/carousel.html")
+          a.trans(href="/templates/carousel.html")
             figure.item-image
               img(src=imgPC+"icon_01.jpg" width="287" height="200" loading="lazy" alt="Carousel")
             .item-title Carousel

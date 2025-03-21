@@ -9,48 +9,6 @@
 @use "_parts/post";
 @use "_parts/breadcrumb";
 
-.section-common-keyvisual {
-  background: #000 url("../img/common/keyvisual_bg.jpg") 50% 50% / 600px auto repeat;
-  color: #fff;
-
-  .wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  .keyvisual-title {
-    width: 100%;
-    font-weight: 700;
-    text-align: center;
-  }
-}
-
-@include desktop {
-  .section-common-keyvisual {
-    .wrapper {
-      height: 400px;
-      padding-top: 100px;
-    }
-
-    .keyvisual-title {
-      font-size: 40px;
-    }
-  }
-}
-
-@include mobile {
-  .section-common-keyvisual {
-    .wrapper {
-      height: 2rem;
-      padding-top: 0.5rem;
-    }
-
-    .keyvisual-title {
-      font-size: 0.26rem;
-    }
-  }
-}
-
 @include desktop {
   .section-kb-general {
     margin-bottom: 50px;
