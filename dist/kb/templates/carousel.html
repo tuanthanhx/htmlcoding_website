@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if IE]><meta http-equiv="cleartype" content="on"><![endif]-->
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+    <meta name="description" content="Templates - HTMLCODING Knowledge Base">
+    <meta name="keywords" content="">
+    <title>Templates - HTMLCODING Knowledge Base</title>
+    <meta property="og:title" content="Templates - HTMLCODING Knowledge Base">
+    <meta property="og:description" content="Templates - HTMLCODING Knowledge Base">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://htmlcoding.net/kb/templates/carousel.html">
+    <meta property="og:image" content="https://htmlcoding.net/img/common/og.jpg">
+    <meta property="og:image:alt" content="Templates - HTMLCODING Knowledge Base">
+    <meta property="og:site_name" content="HTMLCODING">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Templates - HTMLCODING Knowledge Base">
+    <meta name="twitter:description" content="Templates - HTMLCODING Knowledge Base">
+    <meta name="twitter:image" content="https://htmlcoding.net/img/common/og.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="../../css/kb.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-W753DCMN');
+    </script>
+    <!-- End Google Tag Manager-->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W753DCMN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <div class="container">
+      <header class="is-transparent">
+        <div class="wrapper"><a class="header-logo" href="/"><img src="../../img/common/logo.svg" width="300" height="32" loading="eager" alt="HTMLCODING"></a>
+          <nav class="header-nav">
+            <ul>
+              <li class="is-current"><a href="../../#home">Home</a></li>
+              <li><a href="../../#about">About</a></li>
+              <li><a href="../../#estimate">Estimate</a></li>
+              <li><a href="../../#portfolio">Portfolio</a></li>
+              <li><a href="../../#faq">FAQ</a></li>
+              <li><a href="../../#team">Team</a></li>
+              <li><a href="../../kb">KB</a></li>
+              <li class="sm"><a href="../../#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="header-buttons"><a class="btn btn-primary ico-envelope" href="../../#contact">Get in Touch</a></div>
+          <button class="button-menu sm" aria-label="Toggle Mobile Menu"><span></span></button>
+        </div>
+      </header>
+      <main>
+        <section class="section-common-keyvisual">
+          <div class="wrapper">
+            <div class="keyvisual-title">Knowledge Base</div>
+          </div>
+        </section>
+        <nav class="breadcrumb-common">
+          <ol class="wrapper">
+            <li class="breadcrumb-item"><a class="trans" href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item"><a class="trans" href="/kb">Knowledge Base</a>
+            </li>
+            <li class="breadcrumb-item"><a class="trans" href="/kb/templates">Templates</a>
+            </li>
+            <li class="breadcrumb-item"><span>Carousel</span>
+            </li>
+          </ol>
+        </nav>
+        <section class="section-kb-article post">
+          <div class="wrapper">
+            <h1>Carousel</h1>
+            <div class="post-meta">
+              <time class="post-date" datetime="2025-03-20T00:00:00.000Z">Updated on Mar 20, 2025</time>
+            </div>
+            <h2>Use Swiper from CDN</h2>
+            <p>If you don't want to include Swiper files in your project, you may use it from CDN. The following files are available:</p>
+            <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css&quot; /&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+            <h2>Add Swiper HTML Layout</h2>
+            <p>Now, we need to add basic Swiper layout to our app:</p>
+            <pre><code class="language-html">&lt;!-- Slider main container --&gt;
+&lt;div class=&quot;swiper&quot;&gt;
+  &lt;!-- Additional required wrapper --&gt;
+  &lt;div class=&quot;swiper-wrapper&quot;&gt;
+    &lt;!-- Slides --&gt;
+    &lt;div class=&quot;swiper-slide&quot;&gt;Slide 1&lt;/div&gt;
+    &lt;div class=&quot;swiper-slide&quot;&gt;Slide 2&lt;/div&gt;
+    &lt;div class=&quot;swiper-slide&quot;&gt;Slide 3&lt;/div&gt;
+    ...
+  &lt;/div&gt;
+  &lt;!-- If we need pagination --&gt;
+  &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+
+  &lt;!-- If we need navigation buttons --&gt;
+  &lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;
+
+  &lt;!-- If we need scrollbar --&gt;
+  &lt;div class=&quot;swiper-scrollbar&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            <h2>Swiper CSS Styles/Size</h2>
+            <p>In addition to Swiper's CSS styles, we may need to add some custom styles to set Swiper size:</p>
+            <pre><code class="language-css">.swiper {
+  width: 600px;
+  height: 300px;
+}
+</code></pre>
+            <h2>Initialize Swiper</h2>
+            <p>Finally, we need to initialize Swiper in JS:</p>
+            <pre><code class="language-js">const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});</code></pre>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="wrapper">
+          <p class="copyright">&copy; 2025 HTMLCODING Team. All Rights Reserved.</p>
+        </div><a class="button-top" href="#top"></a>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+  </body>
+</html>

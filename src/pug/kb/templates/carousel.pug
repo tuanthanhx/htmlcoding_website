@@ -1,0 +1,101 @@
+extends ../../_layouts/default
+
+block vars
+  -path = "../.."
+  -pageID = "kb"
+  -pageTitle = "Templates - HTMLCODING Knowledge Base"
+  -pageDescription = "Templates - HTMLCODING Knowledge Base"
+  -pageKeywords = ""
+  -imgPC = path+"/img/kb/"
+  -imgSP = path+"/img/kb/sp/"
+  -imgCommonPC = path+"/img/common/"
+  -imgCommonSP = path+"/img/common/sp/"
+
+block container
+
+  section.section-common-keyvisual
+    .wrapper
+      .keyvisual-title Knowledge Base
+
+  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/kb", label: "Knowledge Base"}, {href: "/kb/templates", label: "Templates"}, {label: "Carousel"}])
+
+  section.section-kb-article.post
+    .wrapper
+
+      h1 Carousel
+
+      +postMeta('2025-03-20', null, true)
+
+      h2 Use Swiper from CDN
+
+      p If you don't want to include Swiper files in your project, you may use it from CDN. The following files are available:
+
+      pre
+        code.language-html.
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css&quot; /&gt;
+          &lt;script src=&quot;https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js&quot;&gt;&lt;/script&gt;
+
+      h2 Add Swiper HTML Layout
+      p Now, we need to add basic Swiper layout to our app:
+
+      pre
+        code.language-html.
+          &lt;!-- Slider main container --&gt;
+          &lt;div class=&quot;swiper&quot;&gt;
+            &lt;!-- Additional required wrapper --&gt;
+            &lt;div class=&quot;swiper-wrapper&quot;&gt;
+              &lt;!-- Slides --&gt;
+              &lt;div class=&quot;swiper-slide&quot;&gt;Slide 1&lt;/div&gt;
+              &lt;div class=&quot;swiper-slide&quot;&gt;Slide 2&lt;/div&gt;
+              &lt;div class=&quot;swiper-slide&quot;&gt;Slide 3&lt;/div&gt;
+              ...
+            &lt;/div&gt;
+            &lt;!-- If we need pagination --&gt;
+            &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+
+            &lt;!-- If we need navigation buttons --&gt;
+            &lt;div class=&quot;swiper-button-prev&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;swiper-button-next&quot;&gt;&lt;/div&gt;
+
+            &lt;!-- If we need scrollbar --&gt;
+            &lt;div class=&quot;swiper-scrollbar&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+
+      h2 Swiper CSS Styles/Size
+
+      p In addition to Swiper's CSS styles, we may need to add some custom styles to set Swiper size:
+
+      pre
+        code.language-css.
+          .swiper {
+            width: 600px;
+            height: 300px;
+          }
+
+      h2 Initialize Swiper
+
+      p Finally, we need to initialize Swiper in JS:
+
+      pre
+        code.language-js.
+          const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'vertical',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+              el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+              el: '.swiper-scrollbar',
+            },
+          });

@@ -1,0 +1,112 @@
+extends ../../_layouts/default
+
+block vars
+  -path = "../.."
+  -pageID = "kb"
+  -pageTitle = "Templates - HTMLCODING Knowledge Base"
+  -pageDescription = "Templates - HTMLCODING Knowledge Base"
+  -pageKeywords = ""
+  -imgPC = path+"/img/kb/templates/"
+  -imgSP = path+"/img/kb/templates/sp/"
+  -imgCommonPC = path+"/img/common/"
+  -imgCommonSP = path+"/img/common/sp/"
+
+block container
+
+  section.section-common-keyvisual
+    .wrapper
+      .keyvisual-title Knowledge Base
+
+  +breadcrumbCommon([{href: "/", label: "Home"}, {href: "/kb", label: "Knowledge Base"}, {label: "Templates"}])
+
+  section.section-kb-templates
+    .wrapper
+
+      h1.sec-title Templates
+
+      ul.list-templates
+        li
+          a.trans(href="/kb/templates/carousel.html")
+            figure.item-image
+              img(src=imgPC+"icon_01.jpg" width="287" height="200" loading="lazy" alt="Carousel")
+            .item-title Carousel
+        li
+          figure.item-image
+            img(src=imgPC+"icon_02.jpg" width="287" height="200" loading="lazy" alt="Form Validation")
+          .item-title Form Validation
+        li
+          figure.item-image
+            img(src=imgPC+"icon_03.jpg" width="287" height="200" loading="lazy" alt="Dropdown Navigation")
+          .item-title Dropdown Navigation
+        li
+          figure.item-image
+            img(src=imgPC+"icon_04.jpg" width="287" height="200" loading="lazy" alt="Scroll to Top Button")
+          .item-title Scroll to Top Button
+        li
+          figure.item-image
+            img(src=imgPC+"icon_05.jpg" width="287" height="200" loading="lazy" alt="Modal/Popup Window")
+          .item-title Modal/Popup Window
+        li
+          figure.item-image
+            img(src=imgPC+"icon_06.jpg" width="287" height="200" loading="lazy" alt="Accordion")
+          .item-title Accordion
+        li
+          figure.item-image
+            img(src=imgPC+"icon_07.jpg" width="287" height="200" loading="lazy" alt="Tabs")
+          .item-title Tabs
+        li
+          figure.item-image
+            img(src=imgPC+"icon_08.jpg" width="287" height="200" loading="lazy" alt="Dynamic Content Loading")
+          .item-title Dynamic Content Loading
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Image Gallery with Lightbox")
+        //-   .item-title Image Gallery with Lightbox
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Countdown Timer")
+        //-   .item-title Countdown Timer
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Sticky Elements")
+        //-   .item-title Sticky Elements
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Animated Numbers/Counters")
+        //-   .item-title Animated Numbers/Counters
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Search Bar with Autocomplete")
+        //-   .item-title Search Bar with Autocomplete
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Toggle Dark/Light Mode")
+        //-   .item-title Toggle Dark/Light Mode
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Interactive Maps")
+        //-   .item-title Interactive Maps
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Parallax Scrolling")
+        //-   .item-title Parallax Scrolling
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Client Testimonials Slider")
+        //-   .item-title Client Testimonials Slider
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Lazy Loading Images")
+        //-   .item-title Lazy Loading Images
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Custom Tooltip/Hover Effects")
+        //-   .item-title Custom Tooltip/Hover Effects
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Simple Calculator")
+        //-   .item-title Simple Calculator
+        //- li
+        //-   figure.item-image
+        //-     img(src=imgPC+"placeholder.png" width="287" height="200" loading="lazy" alt="Filterable List")
+        //-   .item-title Filterable List
