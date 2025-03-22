@@ -116,7 +116,7 @@
       loop: true,
       slidesPerView: isMobile() ? 1 : 3,
       autoplay: {
-        delay: 4000
+        delay: 3000
       }
     });
   };
