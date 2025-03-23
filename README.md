@@ -30,3 +30,7 @@ vercel --prod
 -- https://priorityvpn.app/
 -- https://kit.com/ --> DONE
 -- https://www.forbusiness.viber.com/en/
+
+
+## TO RESEARCH
+-- https://github.com/grsmto/simplebar
