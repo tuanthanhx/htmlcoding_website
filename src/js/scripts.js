@@ -295,22 +295,54 @@
   };
 
   const handleFormSubmit = () => {
-    $('#form-contact').on('submit', function (e) {
+    const contactForm = $('#form-contact');
+    contactForm.on('submit', function (e) {
       e.preventDefault();
+
+      const name = contactForm.find('[name="name"]').val()?.trim();
+      const email = contactForm.find('[name="email"]').val()?.trim();
+      const message = contactForm.find('[name="message"]').val()?.trim();
+
+      let isValid = true;
+      let errorMessage = '';
+
+      if (!name || name.length <= 0) {
+        isValid = false;
+        errorMessage += 'Please enter a valid name\n';
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        isValid = false;
+        errorMessage += 'Please enter a valid email address\n';
+      }
+
+      if (!message || message.length <= 0) {
+        isValid = false;
+        errorMessage += 'Please enter a message\n';
+      }
+
+      if (!isValid) {
+        alert(errorMessage);
+        return;
+      }
+
       const formData = $(this).serialize();
-      $('#form-contact').addClass('is-loading');
+      contactForm.addClass('is-loading');
+
       $.ajax({
         url: '/api/send-email',
         type: 'POST',
         data: formData,
         success: () => {
-          $('#form-contact').hide(0, () => {
+          contactForm.hide(0, () => {
             $('.section-top-contact .wrapper').append('<p class="form-message">Message sent successfully!</p>');
-            $('#form-contact').remove();
+            contactForm.remove();
           });
         },
         error: () => {
           alert('Error sending message');
+          contactForm.removeClass('is-loading');
         }
       });
     });
