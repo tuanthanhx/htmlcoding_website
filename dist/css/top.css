@@ -2093,6 +2093,49 @@ select option {
     font-size: 0.14rem;
   }
 }
+.section-top-risk {
+  background: #f2f2f2;
+}
+.section-top-risk .risk-inner {
+  background: #3f3f3f;
+}
+.section-top-risk .sec-heading {
+  color: #fff;
+}
+.section-top-risk .sec-heading .highlight {
+  color: #ffb400;
+}
+.section-top-risk .sec-description {
+  color: #c5c5c5;
+}
+.section-top-risk .sec-button {
+  text-align: center;
+}
+
+@media print, (min-width: 768px) {
+  .section-top-risk {
+    padding: 0 0 200px;
+  }
+  .section-top-risk .risk-inner {
+    padding: 80px 40px 110px;
+    border-radius: 20px;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .section-top-risk {
+    padding: 0 0 1rem;
+  }
+  .section-top-risk .risk-inner {
+    padding: 0.4rem 0.2rem 0.5rem;
+    border-radius: 0.1rem;
+  }
+  .section-top-risk .sec-heading {
+    margin-bottom: 0.2rem;
+  }
+  .section-top-risk .sec-description {
+    margin-bottom: 0.2rem;
+  }
+}
 .section-top-team {
   background-color: #222;
   color: #fff;

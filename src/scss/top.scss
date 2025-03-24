@@ -1159,6 +1159,62 @@
   }
 }
 
+// SECTION RISK
+
+.section-top-risk {
+  background: #f2f2f2;
+
+  .risk-inner {
+    background: #3f3f3f;
+  }
+
+  .sec-heading {
+    color: #fff;
+
+    .highlight {
+      color: $color-primary;
+    }
+  }
+
+  .sec-description {
+    color: #c5c5c5;
+  }
+
+  .sec-button {
+    text-align: center;
+  }
+}
+
+@include desktop {
+  .section-top-risk {
+    padding: 0 0 200px;
+
+    .risk-inner {
+      padding: 80px 40px 110px;
+      border-radius: 20px;
+    }
+  }
+}
+
+@include mobile {
+  .section-top-risk {
+    padding: 0 0 1rem;
+
+    .risk-inner {
+      padding: 0.4rem 0.2rem 0.5rem;
+      border-radius: 0.1rem;
+    }
+
+    .sec-heading {
+      margin-bottom: 0.2rem;
+    }
+
+    .sec-description {
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
 // SECTION TEAM
 
 .section-top-team {
