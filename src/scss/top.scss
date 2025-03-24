@@ -65,6 +65,12 @@
   }
 }
 
+@media (min-width: 1921px) {
+  .section-top-keyvisual {
+    background-image: url("../img/top/keyvisual_bg_xl.jpg");
+  }
+}
+
 @include mobile {
   .section-top-keyvisual {
     min-height: 600px;
@@ -292,7 +298,7 @@
     padding: 0 0 200px;
 
     .cta-inner {
-      padding: 80px 40px;
+      padding: 80px 40px 110px;
       border-radius: 20px;
     }
   }
@@ -305,6 +311,10 @@
     .cta-inner {
       padding: 0.4rem 0.2rem 0.5rem;
       border-radius: 0.1rem;
+    }
+
+    .sec-heading {
+      margin-bottom: 0.2rem;
     }
   }
 }

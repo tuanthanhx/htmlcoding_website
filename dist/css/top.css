@@ -1178,6 +1178,11 @@ select option {
     margin: 0 15px;
   }
 }
+@media (min-width: 1921px) {
+  .section-top-keyvisual {
+    background-image: url("../img/top/keyvisual_bg_xl.jpg");
+  }
+}
 @media only screen and (max-width: 767.98px) {
   .section-top-keyvisual {
     min-height: 600px;
@@ -1364,7 +1369,7 @@ select option {
     padding: 0 0 200px;
   }
   .section-top-cta .cta-inner {
-    padding: 80px 40px;
+    padding: 80px 40px 110px;
     border-radius: 20px;
   }
 }
@@ -1375,6 +1380,9 @@ select option {
   .section-top-cta .cta-inner {
     padding: 0.4rem 0.2rem 0.5rem;
     border-radius: 0.1rem;
+  }
+  .section-top-cta .sec-heading {
+    margin-bottom: 0.2rem;
   }
 }
 .section-top-features {
