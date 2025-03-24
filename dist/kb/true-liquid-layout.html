@@ -91,10 +91,24 @@
             <p>In today’s world of web design, making websites work well on all devices—like phones, tablets, or computers—is super important. Two main ways to do this are <em>Traditional Responsive Layout</em> and a newer idea called <em>True Liquid Layout</em>. Both try to make websites look good on any screen, but they do it differently. Let’s look at what makes them special and why True Liquid Layout is becoming popular as a smart, modern choice.</p>
             <h2>What is Traditional Responsive Layout?</h2>
             <p>Traditional Responsive Layout is a popular way to make websites work on all devices. It started in 2010 by Ethan Marcotte and has been used for over ten years. This method uses flexible grids, special rules called media queries, and units that adjust to fit different screen sizes. The idea is simple: make a website look good and work well on both computers and phones.</p>
+            <figure>
+              <picture>
+                <source srcset="../img/kb//img_250323_sp.jpg" media="(max-width: 767px)">
+                <source srcset="../img/kb//img_250323.jpg" media="(min-width: 768px)"><img src="../img/kb//img_250323_sp.jpg" width="1232" height="630" loading="lazy" alt="Traditional Responsive Layout">
+              </picture>
+              <figcaption>Traditional Responsive Layout</figcaption>
+            </figure>
             <p>Here’s how it works. Designers set specific points—called breakpoints—like 1024px for computers, 768px for tablets, and 320px for phones. At these points, the layout changes to match the screen. For example, a website might show three columns on a computer, two on a tablet, and one on a phone. CSS media queries help switch the styles based on the screen size. This way has made websites easier to use on all devices.</p>
             <p>But it’s not perfect. Breakpoints are fixed and based on common screen sizes from when the site was made. When new devices with different sizes come out, these fixed points don’t always work well. This can make layouts look strange or need extra updates to stay good.</p>
             <h2>The Birth of True Liquid Layout</h2>
             <p>True Liquid Layout takes responsive design further and makes it more flexible. It was created in 2014 by Tuan Thanh Ngo from the HTMLCODING Team. They were working for some Japanese customers who wanted designs to look exactly right on every device. Traditional responsive design, with its fixed breakpoints, couldn’t do this well. So, he came up with a new idea: a layout that adjusts smoothly to any screen.</p>
+            <figure>
+              <picture>
+                <source srcset="../img/kb//img_250324_sp.jpg" media="(max-width: 767px)">
+                <source srcset="../img/kb//img_250324.jpg" media="(min-width: 768px)"><img src="../img/kb//img_250324_sp.jpg" width="1232" height="630" loading="lazy" alt="True Liquid Layout">
+              </picture>
+              <figcaption>True Liquid Layout</figcaption>
+            </figure>
             <p>True Liquid Layout uses percentages instead of set breakpoints. This means the design doesn’t jump at specific widths—it grows or shrinks to fit any screen size perfectly. It uses tools like %, vw, vh, and a CSS trick called calc() to make everything look consistent. The result is a "liquid" design that flows and stays true to the original idea, no matter the device.</p>
             <h2>Key Differences</h2>
             <p class="md">Imagine a webpage where every element, images, and text—changes smoothly when you resize the browser. It doesn’t use strict sizes to decide how to adjust. Below is a demo of this. Try dragging the right edge of each browser to see how it works.</p>

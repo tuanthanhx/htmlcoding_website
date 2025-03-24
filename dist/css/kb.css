@@ -1142,6 +1142,20 @@ select option {
 .post p.is-compact {
   margin-bottom: 0.5em;
 }
+.post figure {
+  margin-bottom: 1.5em;
+}
+.post figure img {
+  display: block;
+  max-width: 100%;
+}
+.post figure figcaption {
+  margin-top: 0.5em;
+  color: #888;
+  font-size: 0.9em;
+  font-style: italic;
+  text-align: center;
+}
 .post em,
 .post i {
   font-style: italic;
