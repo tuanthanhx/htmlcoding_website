@@ -1330,9 +1330,21 @@ select option {
     margin-bottom: 0.2rem;
     font-size: 0.2rem;
   }
+  .section-top-about .list-about .item-content .item-text {
+    margin: 0;
+  }
 }
 .section-top-cta {
-  background: #f7f8ff;
+  background: #fff;
+}
+.section-top-cta .cta-inner {
+  background: #3f3f3f;
+}
+.section-top-cta .sec-heading {
+  color: #fff;
+}
+.section-top-cta .sec-heading .highlight {
+  color: #ffb400;
 }
 .section-top-cta .sec-button {
   text-align: center;
@@ -1340,12 +1352,20 @@ select option {
 
 @media print, (min-width: 768px) {
   .section-top-cta {
-    padding: 200px 0;
+    padding: 0 0 200px;
+  }
+  .section-top-cta .cta-inner {
+    padding: 80px 40px;
+    border-radius: 20px;
   }
 }
 @media only screen and (max-width: 767.98px) {
   .section-top-cta {
-    padding: 1rem 0;
+    padding: 0 0 1rem;
+  }
+  .section-top-cta .cta-inner {
+    padding: 0.4rem 0.2rem 0.5rem;
+    border-radius: 0.1rem;
   }
 }
 .section-top-features {
