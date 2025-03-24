@@ -31,10 +31,6 @@
 
   .keyvisual-buttons {
     .btn {
-      &:not(:first-child) {
-        margin-left: 10px;
-      }
-
       &::before {
         color: #fff;
       }
@@ -59,6 +55,12 @@
 
     .keyvisual-text {
       font-size: 26px;
+    }
+
+    .keyvisual-buttons {
+      .btn {
+        margin: 0 15px;
+      }
     }
   }
 }
@@ -86,6 +88,10 @@
     }
 
     .keyvisual-buttons {
+      width: 2rem;
+      margin: 0 auto;
+      text-align: center;
+
       .btn {
         &:not(:first-child) {
           margin-top: 0.15rem;
@@ -306,9 +312,7 @@
 // SECTION FEATURES
 
 .section-top-features {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 
   .list-features {
@@ -345,6 +349,8 @@
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/features_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
 
     .list-features {
       display: flex;
@@ -386,7 +392,6 @@
 @include mobile {
   .section-top-features {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/features_bg.jpg");
 
     .list-features {
       li {
@@ -611,9 +616,7 @@
 // SECTION ESTIMATE
 
 .section-top-estimate {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 
   .sec-description {
@@ -718,6 +721,8 @@
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/estimate_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
 
     .note {
       margin: 15px 0 0;
@@ -778,7 +783,6 @@
 @include mobile {
   .section-top-estimate {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/estimate_bg.jpg");
 
     .note {
       margin: 0.15rem 0 0;
@@ -909,9 +913,7 @@
 // SECTION PORTFOLIO
 
 .section-top-portfolio {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 
   .sec-description {
@@ -965,6 +967,8 @@
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/portfolio_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
 
     .list-project {
       li {
@@ -995,7 +999,6 @@
 @include mobile {
   .section-top-portfolio {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/portfolio_bg.jpg");
 
     .list-project {
       li {
@@ -1149,9 +1152,7 @@
 // SECTION TEAM
 
 .section-top-team {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 
   .sec-description {
@@ -1199,6 +1200,8 @@
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/team_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
 
     .list-team {
       margin: 100px 0 0;
@@ -1239,7 +1242,6 @@
 @include mobile {
   .section-top-team {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/team_bg.jpg");
 
     .list-team {
       margin: 0.5rem 0 0;

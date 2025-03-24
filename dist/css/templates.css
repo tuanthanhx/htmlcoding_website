@@ -745,6 +745,10 @@ footer .button-top {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
+.btn.btn-link {
+  padding-right: 0;
+  padding-left: 0;
+}
 
 @media print, (min-width: 768px) {
   .btn {

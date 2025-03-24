@@ -6,7 +6,7 @@ header.is-transparent
 
     nav.header-nav
       ul
-        li.is-current
+        li(class={'is-current': pageID === 'top'})
           a(href=path+"/#home") Home
         li
           a(href=path+"/#about") About
@@ -18,7 +18,7 @@ header.is-transparent
           a(href=path+"/#faq") FAQ
         li
           a(href=path+"/#team") Team
-        li
+        li(class={'is-current': pageID === 'kb'})
           a(href=path+"/kb") KB
         li.sm
           a(href=path+"/#contact") Contact

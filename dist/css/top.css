@@ -745,6 +745,10 @@ footer .button-top {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
+.btn.btn-link {
+  padding-right: 0;
+  padding-left: 0;
+}
 
 @media print, (min-width: 768px) {
   .btn {
@@ -1150,9 +1154,6 @@ select option {
   margin-bottom: 1.5em;
   line-height: 1.6;
 }
-.section-top-keyvisual .keyvisual-buttons .btn:not(:first-child) {
-  margin-left: 10px;
-}
 .section-top-keyvisual .keyvisual-buttons .btn::before {
   color: #fff;
 }
@@ -1173,6 +1174,9 @@ select option {
   .section-top-keyvisual .keyvisual-text {
     font-size: 26px;
   }
+  .section-top-keyvisual .keyvisual-buttons .btn {
+    margin: 0 15px;
+  }
 }
 @media only screen and (max-width: 767.98px) {
   .section-top-keyvisual {
@@ -1190,6 +1194,11 @@ select option {
   .section-top-keyvisual .keyvisual-text {
     margin-bottom: 0.3rem;
     font-size: 0.15rem;
+  }
+  .section-top-keyvisual .keyvisual-buttons {
+    width: 2rem;
+    margin: 0 auto;
+    text-align: center;
   }
   .section-top-keyvisual .keyvisual-buttons .btn:not(:first-child) {
     margin-top: 0.15rem;
@@ -1369,9 +1378,7 @@ select option {
   }
 }
 .section-top-features {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 }
 .section-top-features .list-features {
@@ -1401,6 +1408,8 @@ select option {
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/features_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
   }
   .section-top-features .list-features {
     display: -webkit-box;
@@ -1437,7 +1446,6 @@ select option {
 @media only screen and (max-width: 767.98px) {
   .section-top-features {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/features_bg.jpg");
   }
   .section-top-features .list-features li {
     padding: 0.2rem;
@@ -1623,9 +1631,7 @@ select option {
   }
 }
 .section-top-estimate {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 }
 .section-top-estimate .sec-description {
@@ -1724,6 +1730,8 @@ select option {
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/estimate_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
   }
   .section-top-estimate .note {
     margin: 15px 0 0;
@@ -1776,7 +1784,6 @@ select option {
 @media only screen and (max-width: 767.98px) {
   .section-top-estimate {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/estimate_bg.jpg");
   }
   .section-top-estimate .note {
     margin: 0.15rem 0 0;
@@ -1881,9 +1888,7 @@ select option {
   }
 }
 .section-top-portfolio {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 }
 .section-top-portfolio .sec-description {
@@ -1940,6 +1945,8 @@ select option {
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/portfolio_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
   }
   .section-top-portfolio .list-project li {
     position: relative;
@@ -1962,7 +1969,6 @@ select option {
 @media only screen and (max-width: 767.98px) {
   .section-top-portfolio {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/portfolio_bg.jpg");
   }
   .section-top-portfolio .list-project li {
     position: relative;
@@ -2080,9 +2086,7 @@ select option {
   }
 }
 .section-top-team {
-  background-color: #000;
-  background-position: 50% 50%;
-  background-size: cover;
+  background-color: #222;
   color: #fff;
 }
 .section-top-team .sec-description {
@@ -2126,6 +2130,8 @@ select option {
     padding: 200px 0;
     background-attachment: fixed;
     background-image: url("../img/top/team_bg.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
   }
   .section-top-team .list-team {
     margin: 100px 0 0;
@@ -2162,7 +2168,6 @@ select option {
 @media only screen and (max-width: 767.98px) {
   .section-top-team {
     padding: 1rem 0;
-    background-image: url("../img/top/sp/team_bg.jpg");
   }
   .section-top-team .list-team {
     margin: 0.5rem 0 0;
