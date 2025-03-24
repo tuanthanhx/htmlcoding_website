@@ -176,6 +176,27 @@
     });
   };
 
+  const initCounterStats = () => {
+    const counterUp = window.counterUp.default;
+    const callback = entries => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+          counterUp(el, {
+            duration: 1000,
+            delay: 16
+          });
+          el.classList.add('is-visible');
+        }
+      });
+    };
+    const IO = new IntersectionObserver(callback, { threshold: 1 });
+    const elements = document.querySelectorAll('.number');
+    elements.forEach(el => {
+      IO.observe(el);
+    });
+  };
+
   const config = {
     basePrice: 99,
     homePagePrice: 198,
@@ -363,10 +384,10 @@
     handleModal();
     setupEventListeners();
     if (window.location.pathname === '/' || window.location.pathname === '') {
+      initCounterStats();
       calculateEstimate();
       handleFormSubmit();
     }
-
 
     document.querySelectorAll('.browser-simulator').forEach(resizable => {
       const resizer = resizable.querySelector('.simulator-resizer');
