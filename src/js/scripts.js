@@ -356,6 +356,7 @@
     toggleFaq();
     toggleNav();
     toggleHeaderFixed();
+    new WOW().init();
   });
 
   window.addEventListener('load', () => {
