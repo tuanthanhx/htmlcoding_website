@@ -686,8 +686,6 @@ footer .button-top {
     bottom: 20px;
     width: 60px;
     height: 60px;
-    -webkit-transition: opacity ease 0.25s;
-    transition: opacity ease 0.25s;
   }
   footer .button-top:hover {
     opacity: 0.8;
