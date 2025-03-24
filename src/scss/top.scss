@@ -277,11 +277,15 @@
   background: #fff;
 
   .cta-inner {
-    background: #3f3f3f;
+    background-color: #3f3f3f;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
   }
 
   .sec-heading {
     color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
     .highlight {
       color: $color-primary;
@@ -300,6 +304,7 @@
     .cta-inner {
       padding: 80px 40px 110px;
       border-radius: 20px;
+      background-image: url("../img/top/cta_bg.jpg");
     }
   }
 }
@@ -311,6 +316,7 @@
     .cta-inner {
       padding: 0.4rem 0.2rem 0.5rem;
       border-radius: 0.1rem;
+      background-image: url("../img/top/sp/cta_bg.jpg");
     }
 
     .sec-heading {
@@ -1165,11 +1171,15 @@
   background: #f2f2f2;
 
   .risk-inner {
-    background: #3f3f3f;
+    background-color: #3f3f3f;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
   }
 
   .sec-heading {
     color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
     .highlight {
       color: $color-primary;
@@ -1178,6 +1188,7 @@
 
   .sec-description {
     color: #c5c5c5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .sec-button {
@@ -1192,6 +1203,7 @@
     .risk-inner {
       padding: 80px 40px 110px;
       border-radius: 20px;
+      background-image: url("../img/top/risk_bg.jpg");
     }
   }
 }
@@ -1203,6 +1215,7 @@
     .risk-inner {
       padding: 0.4rem 0.2rem 0.5rem;
       border-radius: 0.1rem;
+      background-image: url("../img/top/sp/risk_bg.jpg");
     }
 
     .sec-heading {
