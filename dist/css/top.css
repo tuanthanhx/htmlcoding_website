@@ -1159,6 +1159,7 @@ select option {
 @media print, (min-width: 768px) {
   .section-top-keyvisual {
     min-height: 600px;
+    max-height: 56.25vw;
     background-attachment: fixed;
     background-image: url("../img/top/keyvisual_bg.jpg");
   }
@@ -1238,7 +1239,7 @@ select option {
 
 @media print, (min-width: 768px) {
   .section-top-about {
-    padding: 200px 0;
+    padding: 150px 0 200px;
   }
   .section-top-about .sec-description {
     max-width: 1024px;

@@ -41,6 +41,7 @@
 @include desktop {
   .section-top-keyvisual {
     min-height: 600px;
+    max-height: 56.25vw;
     background-attachment: fixed;
     background-image: url("../img/top/keyvisual_bg.jpg");
 
@@ -147,7 +148,7 @@
 
 @include desktop {
   .section-top-about {
-    padding: 200px 0;
+    padding: 150px 0 200px;
 
     .sec-description {
       max-width: 1024px;
