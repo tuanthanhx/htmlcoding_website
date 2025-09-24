@@ -198,8 +198,8 @@
   };
 
   const config = {
-    basePrice: 99,
-    homePagePrice: 198,
+    basePrice: 29,
+    homePagePrice: 58,
     baseSpeed: 1,
     homePageSpeed: 2,
     testSpeed: 1,
