@@ -199,20 +199,20 @@
 
   const config = {
     basePrice: 29,
-    homePagePrice: 58,
+    homePagePrice: 29,
     baseSpeed: 1,
     homePageSpeed: 2,
     testSpeed: 1,
     responsiveMultipliers: {
-      desktop_only: { cost: 0.5, name: 'Desktop Only' },
-      mobile_only: { cost: 0.5, name: 'Mobile Only' },
+      desktop_only: { cost: 0.75, name: 'Desktop Only' },
+      mobile_only: { cost: 0.75, name: 'Mobile Only' },
       responsive: { cost: 1.0, name: 'Responsive' },
       liquid: { cost: 1.25, name: 'True Liquid Responsive' }
     },
     complexityMultipliers: {
-      basic: { cost: 0.5, name: 'Basic' },
-      intermediate: { cost: 1, name: 'Intermediate' },
-      advanced: { cost: 1.5, name: 'Advanced' }
+      simple: { cost: 0.5, name: 'Simple' },
+      normal: { cost: 1, name: 'Normal' },
+      complex: { cost: 1.5, name: 'Complex' }
     },
     speedMultipliers: {
       standard: { cost: 1.0, time: 1, name: 'Standard' },
@@ -225,7 +225,7 @@
     // 1. Collect user input
     const pageCount = parseInt(document.querySelector('input[name="page_count"]').value, 10) || 1;
     const responsiveOption = document.querySelector('select[name="responsive_option"]').value || 'responsive';
-    const complexityLevel = document.querySelector('select[name="complexity_level"]').value || 'intermediate';
+    const complexityLevel = document.querySelector('select[name="complexity_level"]').value || 'normal';
     const deliverySpeed = document.querySelector('select[name="delivery_speed"]').value || 'standard';
 
     // Validate page count
