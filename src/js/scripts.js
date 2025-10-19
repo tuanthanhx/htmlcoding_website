@@ -348,24 +348,39 @@
         return;
       }
 
-      const formData = $(this).serialize();
       contactForm.addClass('is-loading');
 
-      $.ajax({
-        url: '/api/send-email',
-        type: 'POST',
-        data: formData,
-        success: () => {
-          contactForm.hide(0, () => {
-            $('.section-top-contact .wrapper').append('<p class="form-message">Message sent successfully!</p>');
-            contactForm.remove();
+      // Google reCAPTCHA v3
+      if (typeof grecaptcha !== 'undefined') {
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6Lc6Qu8rAAAAAJBojzaXQ9GoregKabBWaL6aZpNG', {action: 'contact'}).then(function(token) {
+            if (contactForm.find('input[name="g-recaptcha-response"]').length) {
+              contactForm.find('input[name="g-recaptcha-response"]').val(token);
+            } else {
+              contactForm.append('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+            }
+            const formData = contactForm.serialize();
+            $.ajax({
+              url: '/api/send-email',
+              type: 'POST',
+              data: formData,
+              success: () => {
+                contactForm.hide(0, () => {
+                  $('.section-top-contact .wrapper').append('<p class="form-message">Message sent successfully!</p>');
+                  contactForm.remove();
+                });
+              },
+              error: () => {
+                alert('Error sending message');
+                contactForm.removeClass('is-loading');
+              }
+            });
           });
-        },
-        error: () => {
-          alert('Error sending message');
-          contactForm.removeClass('is-loading');
-        }
-      });
+        });
+      } else {
+        alert('reCAPTCHA is not loaded. Please try again later.');
+        contactForm.removeClass('is-loading');
+      }
     });
   };
 

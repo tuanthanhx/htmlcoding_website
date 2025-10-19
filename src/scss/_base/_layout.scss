@@ -82,6 +82,10 @@ a[target="_blank"]:not(.no-icon)::after {
   }
 }
 
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 .container {
   @include desktop {
     min-width: $viewport-width;

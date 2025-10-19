@@ -318,6 +318,10 @@ html.is-visible .load {
   opacity: 1;
 }
 
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 @media print, (min-width: 768px) {
   .container {
     min-width: 1272px;

@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
+import { verifyRecaptcha } from './verify-recaptcha.js';
 
 function validateInput ({ name, email, message }) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -20,13 +21,26 @@ export default async function handler (req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
-  const { name, email, message } = req.body;
+  const { name, email, message, 'g-recaptcha-response': recaptchaToken } = req.body;
 
+  // 1. Validate input
   const validationError = validateInput({ name, email, message });
   if (validationError) {
     return res.status(400).json({ error: validationError });
   }
 
+  // 2. Verify reCAPTCHA v3
+  try {
+    const remoteip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken, remoteip);
+    if (!recaptchaResult.success || recaptchaResult.score < 0.5 || recaptchaResult.action !== 'contact') {
+      return res.status(403).json({ error: 'Failed reCAPTCHA verification. Suspected spam.' });
+    }
+  } catch (err) {
+    return res.status(500).json({ error: 'reCAPTCHA verification error', details: err });
+  }
+
+  // 3. Send email
   const transporter = nodemailer.createTransport({
     host: process.env.NODEMAIL_HOST,
     port: process.env.NODEMAIL_PORT,
